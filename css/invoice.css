@@ -1,0 +1,227 @@
+input:disabled {
+    background-color: #DDDDDD;
+    cursor: not-allowed;
+}
+/********** 发票内容 **********/
+.invoice-wrapper {
+    overflow: hidden;
+}
+.invoice-detail {
+    width: calc(100% - 250px);
+    width: -wekit-calc(100% - 250px);
+    width: -moz-calc(100% - 250px);
+}
+.invoice-title-box {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.invoice-title-box > .container,
+.invoice-info > .container,
+.add-invoice > .container,
+.invoice-content > .container,
+.express > .container {
+    width: 97%;
+}
+.invoice-info {
+    background-color: #fff;    
+    /* display: none; */
+}
+.invoice-desc {
+    height: 65px;
+    line-height: 65px;
+}
+
+/********** 添加发票信息 **********/
+.add-invoice {
+    background-color: #fff;
+    /* display: none; */
+}
+.invoice-title-bg {
+    height: 40px;
+    background-color: #DEDEDE;
+}
+.add-invoice > .container {
+    margin-top: -40px;
+}
+.invoice-caption {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+.add-invoice-form {
+    width: 95%;
+    margin: 0 auto;
+}
+.form-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.form-item {
+    width: 45%;
+    height: 65px;
+}
+.invoice-input, .invoice-select {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+    background-color: #F8F8F8;
+    color: #565656;
+    border-radius: 2px;
+}
+.form-tips {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.submitInvoice {
+    display: block;
+    width: 180px;
+    height: 40px;
+    background-color: #113689;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin: 30px auto;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/********** 有发票的情况 **********/
+.invoice-content {
+    background-color: #fff;
+}
+.invoice-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.invoice-table {
+    margin: 25px 0;
+}
+.invoice-group .invoice-item:nth-child(odd) {
+    /* width: 520px; */
+    width: 60%;
+}
+.invoice-label, .invoice-itemval {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.invoice-label {
+    width: 120px;
+    text-align: right;
+}
+.changeInvoiceBtn {
+    height: 40px;
+    line-height: 40px;
+    margin-right: 120px;
+    cursor: pointer;
+    padding: 0 40px;
+    font-size: 16px;
+    background-color: #113689;
+    color: #fff;
+    border-radius: 2px;
+}
+
+/********** 快递信息 **********/
+.express {
+    padding-bottom: 50px;
+    background-color: #fff;
+}
+.express-title-bg {
+    height: 40px;
+    background-color: #DEDEDE;
+}
+.express > .container {
+    margin-top: -40px;
+}
+.express-title {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 15px;
+}
+.express-table {
+    width: 99.8%;
+    font-size: 16px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.thead {
+    height: 40px;
+}
+.white-divide {
+    height: 15px;
+    background-color: #fff;
+}
+.hasborder, .hasborder > td {
+    border: 1px solid #DEDEDE;
+}
+td {
+    height: 45px;
+}
+.express-attention {
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    color: #E54144;
+    margin-top: 10px;
+}
+.contact {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/********** 修改发票 **********/
+.changeInvoice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.changeInvoice-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.changeInvoice-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+    cursor: pointer;
+}
+.changeInvoice-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+}
+.changeInvoice-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.submitChange {
+    display: block;
+    width: 180px;
+    height: 40px;
+    background-color: #113689;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin: 30px auto;
+    font-size: 16px;
+    cursor: pointer;
+}

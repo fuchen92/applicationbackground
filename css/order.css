@@ -1,0 +1,203 @@
+/********** 我的订单 **********/
+
+/********** 订单详细内容 **********/
+.order-content {
+    overflow: hidden;
+}
+.order-detail {
+    width: calc(100% - 250px);
+    width: -wekit-calc(100% - 250px);
+    width: -moz-calc(100% - 250px);
+}
+.order-title-box {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.order-title-box > .container,
+.classify-order > .container,
+.order-list > .container {
+    width: 97%;
+}
+.classify-order {
+    height: 50px;
+    background-color: #fff;
+    padding-bottom: 15px;
+}
+.classify-ordermenu {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #181818;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.classify-ordermenu.active {
+    color: #113689;
+    border-bottom: 2px solid #113689;
+}
+.allorder {
+    margin-right: 40px;
+}
+
+/********** 订单列表 **********/
+.order-list {
+    display: none;
+    padding-bottom: 25px;
+}
+.order-list.active {
+    display: block;
+    background-color: #fff;
+}
+.graybg {
+    height: 50px;
+    background-color: #DEDEDE;
+}
+.order-list > .container {
+    margin-top: -50px;
+}
+.order-table, .inner-table {
+    width: 99.8%;
+    font-size: 16px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.inner-table {
+    font-size: 14px;
+}
+.thead {
+    height: 50px;
+}
+.thead th {
+    font-size: 16px;
+    font-weight: normal;
+}
+.white-divide {
+    height: 15px;
+    background-color: #fff;
+}
+.hasborder, .hasborder > td {
+    border: 1px solid #DEDEDE;
+}
+.inner-table tr:not(:last-child) td {
+    border-bottom: 1px solid #DEDEDE;
+}
+.order-date, .order-time,
+.paystatus, .cancel-order,
+.allot-link, .allot-status {
+    display: block;
+}
+.order-date, .order-time {
+    height: 25px;
+    line-height: 25px;
+}
+.paystatus {
+    font-size: 14px;
+    color: #FA6321;
+}
+.cancel-order {
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #858585;
+}
+.already-cancel {
+    font-size: 14px;
+    color: #858585;
+}
+.inner-table td {
+    height: 60px;
+}
+.allot-link {
+    color: #1E66AC;
+    text-decoration: underline;
+}
+    /* 未支付情况 */
+.nopay {
+    display: inline-block;
+    color: #CDCDCD;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+.allot-tips {
+    font-size: 12px;
+}
+.nopay-tips {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 20px;
+    background-color: #CFD7E7;
+    font-size: 14px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.nopaytip-text {
+    position: absolute;
+    width: 195px;
+    height: 25px;
+    line-height: 25px;
+    top: -35px;
+    left: -170px;
+    font-size: 12px;
+    padding: 0 5px;
+    border-radius: 2px;
+    background-color: #CFD7E7;
+    color: #181818;
+    display: none;
+}
+.nopay-tips:hover .nopaytip-text {
+    display: block;
+}
+.nopaytip-text::after {
+    position: absolute;
+    content: "";
+    border: 8px solid #CFD7E7;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-width: 10px;
+    top: 22px;
+    right: 18px;
+}
+
+/********** 说明 **********/
+.pay-tips {
+    overflow: hidden;
+    height: 40px;
+    margin: 25px 0;
+}
+.paytips-text {
+    font-size: 14px;
+    line-height: 40px;
+    color: #858585;
+}
+.buy-again {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 40px;
+    font-size: 16px;
+    background-color: #113689;
+    color: #fff;
+    border-radius: 2px;
+}
+.contact {
+    text-align: right;
+}
+.contact-desc, .our-tel {
+    display: inline-block;
+}
+.contact-desc {
+    color: #858585;
+}
+.our-tel {
+    color: #113689;
+}

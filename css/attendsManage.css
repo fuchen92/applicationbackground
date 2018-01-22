@@ -1,0 +1,197 @@
+/********** 参会人员信息管理 **********/
+
+/********** 参会人员详细内容 **********/
+.attends-content {
+    overflow: hidden;
+}
+.attends-detail {
+    width: calc(100% - 250px);
+    width: -wekit-calc(100% - 250px);
+    width: -moz-calc(100% - 250px);
+}
+.attends-title-box {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.attends-title-box > .container,
+.attends-info > .container,
+.allot-list > .container {
+    width: 97%;
+}
+.attends-info {
+    height: 65px;
+    background-color: #fff;
+}
+.attends-desc {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin: 22px 30px 0 0;
+}
+.ticket-count {
+    color: #E54144;
+}
+
+/********** 参会人员列表表格 **********/
+.allot-list {
+    background-color: #fff;
+}
+.allot-title-bg {
+    height: 40px;
+    background-color: #DEDEDE;
+}
+.allot-list > .container {
+    margin-top: -40px;
+}
+.allot-table {
+    width: 99.8%;
+    font-size: 16px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+.thead {
+    height: 40px;
+}
+.white-divide {
+    height: 15px;
+    background-color: #fff;
+}
+.hasborder {
+    border: 1px solid #DEDEDE;
+}
+.hasborder > td {
+    border: 1px solid #DEDEDE;
+}
+td {
+    height: 45px;
+}
+.already-allot {
+    font-weight: bold;
+}
+.no-allot {
+    height: 120px;
+    color: #CDCDCD;
+}
+.changeBtn {
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    color: #113689;
+    cursor: pointer;
+}
+
+.allot-tips {
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    border: 1px solid #DEDEDE;
+    margin-bottom: 40px;
+}
+.ticket-link {
+    color: #E54144;
+}
+.attention {
+    height: 40px;
+    overflow: hidden;
+}
+.attention-text {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+    color: #E54144;
+}
+.buy-again {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 40px;
+    font-size: 16px;
+    background-color: #113689;
+    color: #fff;
+    border-radius: 2px;
+}
+.contact {
+    text-align: right;
+    margin: 10px 0 40px;
+}
+
+
+/********** 修改分配信息对话框 **********/
+.form-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.form-item {
+    width: 45%;
+    height: 65px;
+}
+.allot-input, .allot-select {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+    background-color: #F8F8F8;
+    color: #565656;
+    border-radius: 2px;
+}
+.form-tips {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.btn-group {
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.changeAllot-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.changeAllot-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.changeAllot-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+    cursor: pointer;
+}
+.changeAllot-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+}
+.submitChangeAllot {
+    display: block;
+    width: 180px;
+    height: 40px;
+    background-color: #113689;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin: 30px auto;
+    font-size: 16px;
+    cursor: pointer;
+}

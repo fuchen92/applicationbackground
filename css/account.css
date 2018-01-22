@@ -1,0 +1,152 @@
+/********** 我的账户 **********/
+.account-title-box {
+    height: 50px;
+    line-height: 50px;
+    margin: 25px 0;
+    background-color: #fff;
+}
+.account-title-box > .container,
+.account-box > .container {
+    width: 95%;
+}
+.account-title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #181818;
+}
+.account-box {
+    background-color: #fff;
+}
+.info-menu {
+    height: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.infomenu-item {
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 25px;
+    padding-bottom: 3px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.infomenu-item.active {
+    border-bottom: 2px solid #113689;
+    color: #113689;
+}
+.account-info {
+    margin-top: 25px;
+    padding: 30px 0;
+}
+.accountinfo-item {
+    display: none;
+}
+.accountinfo-item.active {
+    display: block;
+}
+
+/********** 个人信息 **********/
+.info-group {
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.info-column {
+    position: relative;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    color: #181818;
+}
+.column-first {
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+.column-second {
+    width: 250px;
+    text-align: left;
+    margin-right: 20px;
+}
+.column-third {
+    width: 350px;
+    margin-right: 20px;
+}
+.info-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #D3D3D3;
+    padding: 0 10px;
+    z-index: -1;
+    opacity: 0;
+}
+    /* 修改激活时的样式 */
+.changeActive .info-input {
+    z-index: 10;
+    opacity: 1;
+}
+.changeBtn, .cancelBtn, .submitBtn {
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #fff;
+    color: #1E66AC;
+    cursor: pointer;
+    display: none;
+}
+.submitChange {
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #113689;
+    color: #fff;
+    margin: 40px 0 40px 110px;
+    cursor: pointer;
+}
+.changeAttention {
+    color: #565656;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+}
+
+/********** 安全信息 **********/
+.submitBtn {
+    display: none;
+    background-color: #113689;
+    color: #fff;
+}
+.changeActive.column-third .column-desc {
+    display: none;
+}
+.column-third > .info-input {
+    box-sizing: border-box;
+    border: none;
+    padding: 0;
+    overflow: hidden;
+}
+.column-third .getValicode {
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+    margin: 5px 10px 0 0;
+    background-color: #113689;
+    color: #fff;
+    cursor: pointer;
+}
+.column-third .validate-input {
+    width: 230px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+}

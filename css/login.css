@@ -1,0 +1,208 @@
+html, body, header, section, aside, footer, p, h1, h2, h3, h4, h5, h6, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+    min-height: 100%;
+    font-family: "微软雅黑", Arial, "Microsoft Yahei";
+    font-size: 14px;
+    color: #333333;
+}
+body {
+    background-color: #F8F8F8;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+img {
+    display: block;
+    border: none;
+}
+ul, ol, li {
+    list-style: none;
+}
+.container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.lt {
+    float: left;
+}
+.rt {
+    float: right;
+}
+.clear {
+    zoom: 1;
+}
+.clear::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+input, button {
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2px;
+    font-family: Arial, "Microsoft Yahei";
+}
+input:disabled, button:disabled {
+    cursor: not-allowed;
+}
+/********** 登录容器 **********/
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.logo > img {
+    display: inline-block;
+    width: 200px;
+}
+.form-group {
+    position: relative;
+    overflow: hidden;
+}
+.form-input {
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+    background-color: #fff;
+}
+#mobile {
+    margin-bottom: 15px;
+}
+#valicode {
+    width: 295px;
+    margin-right: 15px;
+}
+.getValicode {
+    width: 135px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    border: 1px solid #D3D3D3;
+    background-color: #fff;
+    color: #181818;
+    cursor: pointer;
+}
+.autologin {
+    display: block;
+    margin: 20px 0 60px;
+    cursor: pointer;
+}
+    /* 文字选中背景色selection伪类 */
+.autologin::selection {
+    background-color: transparent;
+}
+.form-checkbox {
+    display: none;
+}
+.form-checkbox + i {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 5px;
+    border: 1px solid #D3D3D3;
+}
+.form-checkbox:checked + i:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 4px;
+    height: 9px;
+    top: -2px;
+    left: 3px;
+    border-bottom: 2px solid red;
+    border-right: 2px solid red;
+    transform: rotate(40deg);
+}
+.tips {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    color: red;
+    display: none;
+}
+.login-btn {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #113689;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.cantlogin {
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #1E66AC;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.cantlogin::selection {
+    background-color: transparent;
+}
+.contact {
+    position: absolute;
+    width: 350px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #858585;
+    display: none;
+}
+.contact::before {
+    position: absolute;
+    display: block;
+    content: "";
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    top: -19px;
+    left: 165px;
+}
+.cantlogin:hover .contact {
+    display: block;
+}
+
+/********** copyright **********/
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #858585;
+    font-size: 14px;
+}

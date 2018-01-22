@@ -1,0 +1,111 @@
+/********** 首页内容 **********/
+/* .wrapper > .container {
+    width: 80%;
+} */
+.welcome {
+    box-sizing: border-box;
+    height: 80px;
+    padding: 25px 0;
+    overflow: hidden;
+}
+.welcome-text {
+    font-size: 24px;
+    line-height: 30px;
+}
+#more-activity {
+    width: 180px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+    background-color: #F8F8F8;
+}
+
+.classify-infobox {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    background-color: #DDDDDD;
+}
+.classify-infobox > .container,
+.activity-item > .container {
+    width: 95%;
+}
+.classify-activity-text, .activity-left {
+    width: 65%;
+}
+.classify-ticket-text, .activity-right {
+    width: 35%;
+}
+
+.activity-lists {
+    margin-top: 15px;
+}
+.activity-item {
+    height: 150px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.activity-left, .activity-right {
+    height: 100%;
+    overflow: hidden;
+}
+.activity-logo {
+    box-sizing: border-box;
+    width: 190px;
+    height: 90px;
+    border: 1px solid #cccccc;
+    margin: 30px 15px 0 0;
+}
+.activity-logo-img {
+    width: 100%;
+}
+.activity-info {
+    width: calc(100% - 210px);
+    width: -webkit-calc(100% - 210px);
+    width: -moz-calc(100% - 210px);
+    height: 90px;
+    margin-top: 30px;
+}
+.activity-item-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.activity-time, .activity-site {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.activity-time {
+    margin-right: 15px;
+    background-image: url(img/calendar.png);
+}
+.activity-site {
+    background-image: url(img/site.png);
+}
+.ticket-status {
+    width: 100%;
+    height: 90px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.ticket-status-text {
+    line-height: 20px;
+    color: #858585;
+    margin: 7px 40px 0 0;
+}
+.hasbuyed .ticket-status-text {
+    color: #181818;
+    cursor: pointer;
+}
+.buy-ticket {
+    box-sizing: border-box;
+    width: 140px;
+    height: 35px;
+    text-align: center;
+    line-height: 33px;
+    border: 1px solid #113689;
+    color: #113689;
+}

@@ -1,0 +1,205 @@
+input:focus, select:focus {
+    border: 1px solid #565656;
+}
+/********** 分配参会人员 **********/
+
+/********** 分配详细内容 **********/
+.allot-content {
+    overflow: hidden;
+}
+.allot-detail {
+    width: calc(100% - 250px);
+    width: -wekit-calc(100% - 250px);
+    width: -moz-calc(100% - 250px);
+}
+.order-title-box {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.order-title-box > .container,
+.allot-info > .container,
+.allot-item > .container {
+    width: 97%;
+}
+.allot-info {
+    height: 65px;
+    background-color: #fff;
+}
+.allot-desc {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin: 22px 30px 0 0;
+}
+.ticket-count {
+    color: #E54144;
+}
+.privilege {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 22px;
+    background-color: #F8F5F0;
+    color: #AF9A71;
+    padding: 0 20px;
+}
+
+/********** 已分配信息列表 **********/
+.allot-list {
+    background-color: #fff;
+}
+.allot-title-bg {
+    height: 40px;
+    background-color: #DEDEDE;
+}
+.allot-item {
+    margin-top: -40px;
+}
+.allot-title {
+    height: 40px;
+    line-height: 40px;
+}
+.allot-subcontent {
+    margin: 20px 0 30px;
+}
+.allot-subcontent:not(:last-child) {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #EDEDEE;
+}
+.allot-subitem {
+    height: 25px;
+    line-height: 25px;
+    margin: 5px 0;
+    font-size: 16px;
+    overflow: hidden;
+}
+.allot-subitem .divide {
+    display: inline-block;
+    vertical-align: middle;
+    height: 15px;
+    border-left: 1px solid #CDCDCD;
+    margin: 0 10px;
+}
+.changeAllotBtn {
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #113689;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/********** 未分配 **********/
+.allot-subtips {
+    box-sizing: border-box;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #858585;
+    margin: 20px 0 30px;
+    padding-left: 30px;
+    background: url(img/question.png) left center no-repeat;
+}
+.add-allot-form {
+    width: 95%;
+    margin: 0 auto;
+}
+.form-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.form-item {
+    width: 45%;
+    height: 65px;
+}
+.allot-input, .allot-select {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+    background-color: #F8F8F8;
+    color: #565656;
+    border-radius: 2px;
+}
+.form-tips {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.btn-group {
+    text-align: right;
+    margin-bottom: 50px;
+}
+.add-another, .submit-allot {
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #113689;
+    color: #fff;
+}
+.add-another {
+    /* border: 1px solid #113689;
+    background-color: #fff; */
+    /* color: #113689; */
+    margin-right: 20px;
+}
+/* .submit-allot {
+    background-color: #113689;
+    color: #fff;
+} */
+
+/********** 修改分配信息对话框 **********/
+.changeAllot-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.changeAllot-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.changeAllot-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+    cursor: pointer;
+}
+.changeAllot-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+}
+.submitChangeAllot {
+    display: block;
+    width: 180px;
+    height: 40px;
+    background-color: #113689;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin: 30px auto;
+    font-size: 16px;
+    cursor: pointer;
+}
