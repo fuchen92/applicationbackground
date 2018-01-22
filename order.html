@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo lt">
+                <a href="index.html">
+                    <img class="logo-img" src="css/img/logo.png" />
+                </a>
+            </div>
+            <ul class="nav-list rt">
+                <li class="nav-item lt">
+                    <div class="navitem-caret">
+                        <img src="css/img/question.png" />
+                    </div>
+                    <a class="navitem-text" href="faq.html">常见问题</a>
+                </li>
+                <li class="nav-item lt">
+                    <b class="divide"></b>
+                    <div class="navitem-caret">
+                        <img src="css/img/account.png" />
+                    </div>
+                    <a class="navitem-text" href="account.html">我的账户</a>
+                </li>
+                <li class="nav-item lt">
+                    <a class="loginout-btn" href="login.html">退出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container">
+            <div class="activity-title-box">
+                <div class="container">
+                    <h1 class="activity-title lt">2018环球旅讯峰会&中国数字旅游展</h1>
+                    <span class="activity-time">2018年9月19日 - 21日</span>
+                    <span class="activity-site">上海长风跨国采购中心</span>
+                    <a class="more-activity rt" href="http://event.traveldaily.cn/">查看2018年环旅活动</a>
+                </div>
+            </div>
+            <div class="order-content">
+                <div class="siderbar-menu lt">
+                    <a class="siderbar-menuitem active" href="order.html">我的订单</a>
+                    <a class="siderbar-menuitem" href="attendsManage.html">参会人员信息管理</a>
+                    <a class="siderbar-menuitem" href="invoice.html">我的发票</a>
+                </div>
+                <div class="order-detail rt">
+                    <div class="order-title-box">
+                        <div class="container">
+                            <h3 class="order-title">我的订单</h3>
+                        </div>
+                    </div>
+                    <div class="classify-order">
+                        <div class="container">
+                            <span class="classify-ordermenu allorder active">所有订单</span>
+                            <span class="classify-ordermenu already-pay">已付款</span>
+                        </div>
+                    </div>
+                    <!-- 所有订单列表 -->
+                    <div class="order-list active">
+                        <div class="graybg"></div>
+                        <div class="container">
+                            <table class="order-table" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="thead">
+                                        <th>订单号</th>
+                                        <th>下单时间</th>
+                                        <th>订单总额</th>
+                                        <th>支付方式</th>
+                                        <th>联系人</th>
+                                        <th>付款状态</th>
+                                        <th>订单内容</th>
+                                        <th>分配情况</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（已支付） -->
+                                    <tr class="hasborder">
+                                        <td>1001</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <span class="paystatus">已付款</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link" href="allot.html">分配参会人</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status">已全部分配</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status allot-tips">还剩2张未分配</span>
+                                                        <a class="allot-link" href="allot.html">点击分配</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（已支付） -->
+                                    <tr class="hasborder">
+                                        <td>1002</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <span class="paystatus">已付款</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>展览票 x 2</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link" href="allot.html">分配参会人</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status">已全部分配</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status allot-tips">还剩2张未分配</span>
+                                                        <a class="allot-link" href="allot.html">点击分配</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status allot-tips">还剩2张未分配</span>
+                                                        <a class="allot-link" href="allot.html">点击分配</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（未支付） -->
+                                    <tr class="hasborder">
+                                        <td>1003</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <span class="paystatus">未支付</span>
+                                            <span class="cancel-order">取消订单</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status">已全部分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status allot-tips">还剩2张未分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（未支付） -->
+                                    <tr class="hasborder">
+                                        <td>1004</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <span class="paystatus">未支付</span>
+                                            <span class="cancel-order">取消订单</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status">已全部分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status allot-tips">还剩2张未分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（已取消） -->
+                                    <tr class="hasborder">
+                                        <td>1004</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <!-- <span class="paystatus">未支付</span> -->
+                                            <!-- <span class="cancel-order">取消订单</span> -->
+                                            <span class="already-cancel">已取消</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>展览票 x 3</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status">已全部分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status allot-tips">还剩2张未分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <span class="allot-status allot-tips">还剩2张未分配</span> -->
+                                                        <a class="allot-link nopay" href="javascript:void(0);">分配参会人</a>
+                                                        <span class="nopay-tips">
+                                                            ?
+                                                            <span class="nopaytip-text">完成付款后，您可以分配门票</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pay-tips">
+                                <p class="paytips-text lt">注：如你选择了银行转账方式，请注意查收您的邮箱，我们会用邮箱来和您沟通付款事宜。</p>
+                                <a class="buy-again rt" href="">增加购票</a>
+                            </div>
+                            <p class="contact">
+                                <span class="contact-desc">有问题，请联系我们：</span>
+                                <span class="our-tel">020-28829750</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 已付款订单列表 -->
+                    <div class="order-list">
+                        <div class="graybg"></div>
+                        <div class="container">
+                            <table class="order-table" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="thead">
+                                        <th>订单号</th>
+                                        <th>下单时间</th>
+                                        <th>订单总额</th>
+                                        <th>支付方式</th>
+                                        <th>联系人</th>
+                                        <th>付款状态</th>
+                                        <th>订单内容</th>
+                                        <th>分配情况</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（已支付） -->
+                                    <tr class="hasborder">
+                                        <td>1001</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <span class="paystatus">已付款</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link" href="allot.html">分配参会人</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status">已全部分配</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status allot-tips">还剩2张未分配</span>
+                                                        <a class="allot-link" href="allot.html">点击分配</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 订单（已支付） -->
+                                    <tr class="hasborder">
+                                        <td>1002</td>
+                                        <td>
+                                            <span class="order-date">2018-01-01</span>
+                                            <span class="order-time">15:00</span>
+                                        </td>
+                                        <td>
+                                            <strong>￥7460</strong>
+                                        </td>
+                                        <td>银行汇款</td>
+                                        <td>李柔</td>
+                                        <td>
+                                            <span class="paystatus">已付款</span>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>VIP票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>直通票 x 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通票 x 2</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="inner-table" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <a class="allot-link" href="allot.html">分配参会人</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status">已全部分配</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="allot-status allot-tips">还剩2张未分配</span>
+                                                        <a class="allot-link" href="allot.html">点击分配</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pay-tips">
+                                <p class="paytips-text lt">注：如你选择了银行转账方式，请注意查收您的邮箱，我们会用邮箱来和您沟通付款事宜。</p>
+                                <a class="buy-again rt" href="">增加购票</a>
+                            </div>
+                            <p class="contact">
+                                <span class="contact-desc">有问题，请联系我们：</span>
+                                <span class="our-tel">020-28829750</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".classify-ordermenu").on("click", function () {
+                var index = $(this).index();
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".order-list").eq(index).addClass("active").siblings().removeClass("active");
+            });
+        });
+    </script>
+</body>
+</html>

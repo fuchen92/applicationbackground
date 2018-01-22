@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>发票页</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/invoice.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo lt">
+                <a href="index.html">
+                    <img class="logo-img" src="css/img/logo.png" />
+                </a>
+            </div>
+            <ul class="nav-list rt">
+                <li class="nav-item lt">
+                    <div class="navitem-caret">
+                        <img src="css/img/question.png" />
+                    </div>
+                    <a class="navitem-text" href="faq.html">常见问题</a>
+                </li>
+                <li class="nav-item lt">
+                    <b class="divide"></b>
+                    <div class="navitem-caret">
+                        <img src="css/img/account.png" />
+                    </div>
+                    <a class="navitem-text" href="account.html">我的账户</a>
+                </li>
+                <li class="nav-item lt">
+                    <a class="loginout-btn" href="login.html">退出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container">
+            <div class="activity-title-box">
+                <div class="container">
+                    <h1 class="activity-title lt">2018环球旅讯峰会&amp;中国数字旅游展</h1>
+                    <span class="activity-time">2018年9月19日 - 21日</span>
+                    <span class="activity-site">上海长风跨国采购中心</span>
+                    <a class="more-activity rt" href="http://event.traveldaily.cn/">查看2018年环旅活动</a>
+                </div>
+            </div>
+            <div class="invoice-wrapper">
+                <div class="siderbar-menu lt">
+                    <a class="siderbar-menuitem" href="order.html">我的订单</a>
+                    <a class="siderbar-menuitem" href="attendsManage.html">参会人员信息管理</a>
+                    <a class="siderbar-menuitem active" href="invoice.html">我的发票</a>
+                </div>
+                <div class="invoice-detail rt">
+                    <div class="invoice-title-box">
+                        <div class="container">
+                            <h3 class="invoice-title">我的发票</h3>
+                        </div>
+                    </div>
+                    <!-- 没有发票信息的情况 -->
+                    <div class="invoice-info">
+                        <div class="container">
+                            <p class="invoice-desc">请填写您的发票信息</p>
+                        </div>
+                    </div>
+                    <div class="add-invoice">
+                        <div class="invoice-title-bg"></div>
+                        <div class="container">
+                            <h3 class="invoice-caption">发票内容</h3>
+                            <ul class="add-invoice-form">
+                                <li class="form-group">
+                                    <div class="form-item lt">
+                                        <select id="chooseInvoice" class="invoice-select">
+                                            <option value="1">普通发票</option>
+                                            <option value="2">专用发票</option>
+                                            <option value="0">不需要发票</option>
+                                        </select>
+                                        <p class="form-tips">请选择发票类型</p>
+                                    </div>
+                                    <div class="form-item rt">
+                                        <select id="invoiceContent" class="invoice-select">
+                                            <option value="0">发票内容</option>
+                                            <option value="1">会议费</option>
+                                            <option value="2">信息技术咨询服务费</option>
+                                            <option value="3">展览服务费</option>
+                                        </select>
+                                        <p class="form-tips">请选择发票内容</p>
+                                    </div>
+                                </li>
+                                <li class="form-group">
+                                    <div class="form-item lt">
+                                        <input class="invoice-input" type="text" placeholder="发票抬头（公司注册名称）">
+                                        <p class="form-tips">请填写发票抬头</p>
+                                    </div>
+                                    <div class="form-item rt">
+                                        <input class="invoice-input" type="text" placeholder="纳税人识别号">
+                                        <p class="form-tips">请填写纳税人识别号</p>
+                                    </div>
+                                </li>
+                                <li class="form-group">
+                                    <div class="form-item lt">
+                                        <input class="invoice-input candisable" type="text" placeholder="公司注册地址" disabled="disabled">
+                                        <p class="form-tips">请填写公司注册地址</p>
+                                    </div>
+                                    <div class="form-item rt">
+                                        <input class="invoice-input candisable" type="text" placeholder="公司电话" disabled="disabled">
+                                        <p class="form-tips">请填写公司电话</p>
+                                    </div>
+                                </li>
+                                <li class="form-group">
+                                    <div class="form-item lt">
+                                        <input class="invoice-input candisable" type="text" placeholder="开户银行" disabled="disabled">
+                                        <p class="form-tips">请填写开户银行</p>
+                                    </div>
+                                    <div class="form-item rt">
+                                        <input class="invoice-input candisable" type="text" placeholder="银行帐号" disabled="disabled">
+                                        <p class="form-tips">请填写银行帐号</p>
+                                    </div>
+                                </li>
+                                <li class="form-group">
+                                    <div class="form-item lt">
+                                        <select id="province" class="invoice-select">
+                                            <option value="0">发票邮寄省份</option>
+                                        </select>
+                                        <p class="form-tips">请选择发票邮寄省份</p>
+                                    </div>
+                                    <div class="form-item rt">
+                                        <select id="city" class="invoice-select">
+                                            <option value="0">城市</option>
+                                        </select>
+                                        <p class="form-tips">请选择城市</p>
+                                    </div>
+                                </li>
+                                <li class="form-group">
+                                    <div class="form-item lt">
+                                        <input class="invoice-input" type="text" placeholder="详细地址">
+                                        <p class="form-tips">请填写详细地址</p>
+                                    </div>
+                                    <div class="form-item rt">
+                                        <input class="invoice-input" type="text" placeholder="邮政编码">
+                                        <p class="form-tips">请填写邮政编码</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="submitInvoice">确认提交</button>
+                        </div>
+                    </div>
+                    <!-- 有发票信息的情况 -->
+                    <div class="invoice-content">
+                        <div class="container">
+                            <ul class="invoice-table">
+                                <li class="invoice-group">
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">发票类别：</span>
+                                        <span class="invoice-itemval">专用发票</span>
+                                    </div>
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">发票内容：</span>
+                                        <span class="invoice-itemval">会议费</span>
+                                    </div>
+                                </li>
+                                <li class="invoice-group">
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">发票抬头：</span>
+                                        <span class="invoice-itemval">中华人民共和国</span>
+                                    </div>
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">纳税人识别号：</span>
+                                        <span class="invoice-itemval">110120119</span>
+                                    </div>
+                                </li>
+                                <li class="invoice-group">
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">公司注册地址：</span>
+                                        <span class="invoice-itemval">广州越秀</span>
+                                    </div>
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">公司电话：</span>
+                                        <span class="invoice-itemval">110120119</span>
+                                    </div>
+                                </li>
+                                <li class="invoice-group">
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">开户银行：</span>
+                                        <span class="invoice-itemval">中国工商银行</span>
+                                    </div>
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">银行帐号：</span>
+                                        <span class="invoice-itemval">110120119</span>
+                                    </div>
+                                </li>
+                                <li class="invoice-group">
+                                    <div class="invoice-item lt">
+                                        <span class="invoice-label">邮寄地址：</span>
+                                        <span class="invoice-itemval">广东省 广州市 越秀区东风东路1号东峻广场1座2604室</span>
+                                    </div>
+                                    <button class="changeInvoiceBtn rt">修改发票信息</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 快递信息 -->
+                    <div class="express">
+                        <div class="express-title-bg"></div>
+                        <div class="container">
+                            <h3 class="express-title">发票快递信息</h3>
+                            <table class="express-table" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="thead">
+                                        <th>快递日期</th>
+                                        <th>快递公司</th>
+                                        <th>快递单号</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="white-divide" colspan="3"></td>
+                                    </tr>
+                                    <tr class="hasborder">
+                                        <td>2018-02-02</td>
+                                        <td>顺丰快递</td>
+                                        <td>123456789</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="express-attention">注：发票一般在收款后7个工作日内寄出，一张订单对应一张发票。</p>
+                            <p class="contact">有问题，请联系我们：020-28829750</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改发票 -->
+    <div class="changeInvoice">
+        <div class="changeInvoice-bg"></div>
+        <div class="changeInvoice-close">×</div>
+        <div class="changeInvoice-content">
+            <h3 class="changeInvoice-title">发票内容</h3>
+            <ul class="changeInvoice-form">
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <select id="chooseInvoice" class="invoice-select">
+                            <option value="1">普通发票</option>
+                            <option value="2">专用发票</option>
+                            <option value="0">不需要发票</option>
+                        </select>
+                        <p class="form-tips">请选择发票类型</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="invoiceContent" class="invoice-select">
+                            <option value="0">发票内容</option>
+                            <option value="1">会议费</option>
+                            <option value="2">信息技术咨询服务费</option>
+                            <option value="3">展览服务费</option>
+                        </select>
+                        <p class="form-tips">请选择发票内容</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="invoice-input" type="text" placeholder="发票抬头（公司注册名称）">
+                        <p class="form-tips">请填写发票抬头</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="invoice-input" type="text" placeholder="纳税人识别号">
+                        <p class="form-tips">请填写纳税人识别号</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="invoice-input candisable" type="text" placeholder="公司注册地址" disabled="disabled">
+                        <p class="form-tips">请填写公司注册地址</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="invoice-input candisable" type="text" placeholder="公司电话" disabled="disabled">
+                        <p class="form-tips">请填写公司电话</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="invoice-input candisable" type="text" placeholder="开户银行" disabled="disabled">
+                        <p class="form-tips">请填写开户银行</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="invoice-input candisable" type="text" placeholder="银行帐号" disabled="disabled">
+                        <p class="form-tips">请填写银行帐号</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <select id="province" class="invoice-select">
+                            <option value="0">发票邮寄省份</option>
+                        </select>
+                        <p class="form-tips">请选择发票邮寄省份</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="city" class="invoice-select">
+                            <option value="0">城市</option>
+                        </select>
+                        <p class="form-tips">请选择城市</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="invoice-input" type="text" placeholder="详细地址">
+                        <p class="form-tips">请填写详细地址</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="invoice-input" type="text" placeholder="邮政编码">
+                        <p class="form-tips">请填写邮政编码</p>
+                    </div>
+                </li>
+            </ul>
+            <button class="submitChange">确认修改</button>
+        </div>
+    </div>
+</body>
+</html>

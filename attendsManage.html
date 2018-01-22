@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>参会人员信息管理</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/attendsManage.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo lt">
+                <a href="index.html">
+                    <img class="logo-img" src="css/img/logo.png" />
+                </a>
+            </div>
+            <ul class="nav-list rt">
+                <li class="nav-item lt">
+                    <div class="navitem-caret">
+                        <img src="css/img/question.png" />
+                    </div>
+                    <a class="navitem-text" href="faq.html">常见问题</a>
+                </li>
+                <li class="nav-item lt">
+                    <b class="divide"></b>
+                    <div class="navitem-caret">
+                        <img src="css/img/account.png" />
+                    </div>
+                    <a class="navitem-text" href="account.html">我的账户</a>
+                </li>
+                <li class="nav-item lt">
+                    <a class="loginout-btn" href="login.html">退出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container">
+            <div class="activity-title-box">
+                <div class="container">
+                    <h1 class="activity-title lt">2018环球旅讯峰会&中国数字旅游展</h1>
+                    <span class="activity-time">2018年9月19日 - 21日</span>
+                    <span class="activity-site">上海长风跨国采购中心</span>
+                    <a class="more-activity rt" href="http://event.traveldaily.cn/">查看2018年环旅活动</a>
+                </div>
+            </div>
+            <div class="attends-content">
+                <div class="siderbar-menu lt">
+                    <a class="siderbar-menuitem" href="order.html">我的订单</a>
+                    <a class="siderbar-menuitem active" href="attendsManage.html">参会人员信息管理</a>
+                    <a class="siderbar-menuitem" href="invoice.html">我的发票</a>
+                </div>
+                <div class="attends-detail rt">
+                    <div class="attends-title-box">
+                        <div class="container">
+                            <h3 class="attends-title">参会人员信息管理</h3>
+                        </div>
+                    </div>
+                    <div class="attends-info">
+                        <div class="container">
+                            <p class="attends-desc">
+                                尊敬的环旅嘉宾，您总共购买了<span class="ticket-count">5</span>张门票，已分配 <span class="ticket-count">0</span>张，还有 <span class="ticket-count">5</span>张未分配。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="allot-list">
+                        <div class="allot-title-bg"></div>
+                        <div class="container">
+                            <table class="allot-table" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="thead">
+                                        <th>&nbsp;</th>
+                                        <th>序号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>公司</th>
+                                        <th>职位</th>
+                                        <th>手机</th>
+                                        <th>邮箱</th>
+                                        <th>门票类别</th>
+                                        <th>管理</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 已分配情况 -->      
+                                    <tr>
+                                        <td class="white-divide" colspan="10"></td>
+                                    </tr>
+                                    <tr class="hasborder" style="border: 0;">
+                                        <td class="already-allot" rowspan="5">已分配门票</td>
+                                        <td colspan="9" style="border: 0; height: 0;"></td>
+                                    </tr>
+                                    <tr class="hasborder">
+                                        <td>1</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>中华人民共和国</td>
+                                        <td>经理</td>
+                                        <td>13911112222</td>
+                                        <td>fuchen@qq.com</td>
+                                        <td>vip票</td>
+                                        <td>
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder">
+                                        <td>2</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>中华人民共和国</td>
+                                        <td>经理</td>
+                                        <td>13911112222</td>
+                                        <td>fuchen@qq.com</td>
+                                        <td>vip票</td>
+                                        <td>
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder">
+                                        <td>3</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>中华人民共和国</td>
+                                        <td>经理</td>
+                                        <td>13911112222</td>
+                                        <td>fuchen@qq.com</td>
+                                        <td>vip票</td>
+                                        <td>
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder">
+                                        <td>4</td>
+                                        <td>张三</td>
+                                        <td>男</td>
+                                        <td>中华人民共和国</td>
+                                        <td>经理</td>
+                                        <td>13911112222</td>
+                                        <td>fuchen@qq.com</td>
+                                        <td>vip票</td>
+                                        <td>
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 未分配情况 -->
+                                    <tr>
+                                        <td class="no-allot" colspan="10">
+                                            您暂未分配门票
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="allot-tips">
+                                您还有<span class="ticket-count">1</span>张门票未分配，请<a class="ticket-link" href="order.html">点击查看</a>
+                            </p>
+                            <div class="attention">
+                                <p class="attention-text lt">注：本次峰会参会人员信息需在X月X日前完成提交。</p>
+                                <a class="buy-again rt" href="#">再次购票</a>
+                            </div>
+                            <p class="contact">
+                                有问题，请联系我们：020-28829750
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改分配信息对话框 -->
+    <div class="changeAllot-dialog">
+        <div class="changeAllot-bg"></div>
+        <div class="changeAllot-close">×</div>
+        <div class="changeAllot-content">
+            <ul class="changeAllot-form">
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文姓名">
+                        <p class="form-tips">请输入中文姓名</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文姓名">
+                        <p class="form-tips">请输入英文姓名</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文公司名称">
+                        <p class="form-tips">请输入中文公司名称</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文公司名称">
+                        <p class="form-tips">请输入英文公司名称</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文职位名称">
+                        <p class="form-tips">请输入中文职位名称</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文职位名称">
+                        <p class="form-tips">请输入英文职位名称</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="手机号码">
+                        <p class="form-tips">请输入手机号码</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="固话号码">
+                        <p class="form-tips">请输入固话号码</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="Email地址">
+                        <p class="form-tips">请输入Email邮箱地址</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="changeIndustry" class="allot-select">
+                            <option value="0">请选择所在行业</option>
+                            <option value="77">航空公司</option>
+                            <option value="78">酒店</option>
+                            <option value="79">OTA/旅游搜索引擎</option>
+                            <option value="143">GDS</option>
+                            <option value="140">公寓/非标准住宿业（民宿等）</option>
+                            <option value="80">旅行社/机票代理人</option>
+                            <option value="81">景区/目的地</option>
+                            <option value="82">旅游局</option>
+                            <option value="83">邮轮</option>
+                            <option value="84">租车/用车</option>
+                            <option value="144">B2B分销平台/批发商</option>
+                            <option value="145">社区/攻略/点评网站</option>
+                            <option value="146">行程规划/定制游</option>
+                            <option value="147">旅游地产</option>
+                            <option value="203">TMC/MICE</option>
+                            <option value="204">综合性旅游文化企业</option>
+                            <option value="73">旅游科技（如 PMS、B2B分销技术、呼叫中心、云服务等）</option>
+                            <option value="72">数字营销（如 SEO、社交媒体营销、用户体验设计等）</option>
+                            <option value="74">商务服务（如保险、投融资、管理/咨询等）</option>
+                            <option value="75">媒体</option>
+                            <option value="76">其他</option>
+                        </select>
+                        <p class="form-tips">请选择行业</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <select id="changeJob" class="allot-select">
+                            <option value="0">请选择职能</option>
+                            <option value="1">高层管理</option>
+                            <option value="2">市场</option>
+                            <option value="3">营销</option>
+                        </select>
+                        <p class="form-tips">请选择职能</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="changeSex" class="allot-select">
+                            <option value="0">请选择性别</option>
+                            <option value="1">先生</option>
+                            <option value="2">女士</option>
+                        </select>
+                        <p class="form-tips">请选择性别</p>
+                    </div>
+                </li>
+            </ul>
+            <button id="submitChangeAllot" class="submitChangeAllot">确认修改</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>我的账户</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo lt">
+                <a href="index.html">
+                    <img class="logo-img" src="css/img/logo.png" />
+                </a>
+            </div>
+            <ul class="nav-list rt">
+                <li class="nav-item lt">
+                    <div class="navitem-caret">
+                        <img src="css/img/question.png" />
+                    </div>
+                    <a class="navitem-text" href="faq.html">常见问题</a>
+                </li>
+                <li class="nav-item lt">
+                    <b class="divide"></b>
+                    <div class="navitem-caret">
+                        <img src="css/img/account.png" />
+                    </div>
+                    <a class="navitem-text" href="account.html">我的账户</a>
+                </li>
+                <li class="nav-item lt">
+                    <a class="loginout-btn" href="login.html">退出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container">
+            <div class="account-title-box">
+                <div class="container">
+                    <h3 class="account-title">我的账户</h3>
+                </div>
+            </div>
+            <div class="account-box">
+                <div class="container">
+                    <ul class="info-menu">
+                        <li class="infomenu-item lt active">个人信息</li>
+                        <li class="infomenu-item lt">安全信息</li>
+                    </ul>
+                    <div class="account-info">
+                        <div class="accountinfo-item active">
+                            <ul class="info-table" id="personalInfo">
+                                <li class="info-group">
+                                    <div class="info-column column-first lt">姓名：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">张三</p>
+                                        <input id="changeName" class="info-input" type="text" placeholder="张三" data-role='[{ "name": "姓名" }]'>
+                                    </div>
+                                    <div class="info-column column-third lt">&nbsp;</div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                    </div>
+                                </li>
+                                <li class="info-group">
+                                    <div class="info-column column-first lt">职位：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">总经理</p>
+                                        <input id="changeJob" class="info-input" type="text" placeholder="总经理" data-role='[{ "name": "职位" }]'>
+                                    </div>
+                                    <div class="info-column column-third lt">&nbsp;</div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                    </div>
+                                </li>
+                                <li class="info-group">
+                                    <div class="info-column column-first lt">所属公司：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">环球旅讯</p>
+                                        <input id="changeCompany" class="info-input" type="text" placeholder="环球旅讯" data-role='[{ "name": "公司" }]'>
+                                    </div>
+                                    <div class="info-column column-third lt">&nbsp;</div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                    </div>
+                                </li>
+                                <li class="info-group">
+                                    <div class="info-column column-first lt">固话：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">020 - 8123456</p>
+                                        <input id="changeTel" class="info-input" type="text" placeholder="020-8123456" data-role='[{ "name": "电话" }]'>
+                                    </div>
+                                    <div class="info-column column-third lt">&nbsp;</div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p class="changeAttention">注：该处的联系人信息您在提交报名信息时所填写的，我们将会和联系人来沟通参会事宜。</p>
+                            <button id="submitChange" class="submitChange" disabled="disabled">提交</button>
+                        </div>
+                        <div class="accountinfo-item">
+                            <ul class="info-table" id="securityInfo">
+                                <li class="info-group">
+                                    <div class="info-column column-first lt">联系手机：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">139 1110 1120</p>
+                                        <input id="changeMobile" class="info-input" type="text" placeholder="请输入新手机">
+                                    </div>
+                                    <div class="info-column column-third lt">
+                                        <p class="column-desc">手机号码是您的唯一登录方式，请谨慎修改。</p>
+                                        <div class="info-input">
+                                            <button id="getValicode" class="getValicode lt">发送手机验证码</button>
+                                            <input id="valicode" class="validate-input lt" type="text" placeholder="验证码">
+                                        </div>
+                                    </div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                        <button id="submitMobile" class="submitBtn">提交</button>
+                                    </div>
+                                </li>
+                                <li class="info-group">
+                                    <div class="info-column column-first lt">联系邮箱：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">110@qq.com</p>
+                                        <input id="changeEmail" class="info-input" type="text" placeholder="请输入新邮箱">
+                                    </div>
+                                    <div class="info-column column-third lt">
+                                        <p class="column-desc">我们将通过该邮箱和您进行邮件沟通。</p>
+                                    </div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                        <button id="submitEmail" class="submitBtn">提交</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/account.js"></script>
+</body>
+</html>
