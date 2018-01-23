@@ -1,3 +1,7 @@
+/* button:disabled {
+    background-color: #dedede;
+    cursor: not-allowed;
+} */
 /********** 我的账户 **********/
 .account-title-box {
     height: 50px;
@@ -115,7 +119,7 @@
 .changeAttention {
     color: #565656;
     font-size: 14px;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 /********** 安全信息 **********/
@@ -143,6 +147,10 @@
     background-color: #113689;
     color: #fff;
     cursor: pointer;
+}
+.getValicode:disabled {
+    background-color: #dedede;
+    cursor: not-allowed;
 }
 .column-third .validate-input {
     width: 230px;

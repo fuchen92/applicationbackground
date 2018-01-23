@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    // var needChange = false;         // 是否需要修改的标识
-
     
     $(".infomenu-item").on("click", function () {
         var index = $(this).index();
@@ -26,71 +24,18 @@ $(document).ready(function () {
         var needChangeEle = ele.closest(".info-group").children(".column-second, .column-third"),
             changeInputs = needChangeEle.find("input");
         
-
         ele.removeAttr("style").siblings("button").css("display", "inline-block");                
         if (ele.hasClass("changeBtn")) {
             needChangeEle.addClass("changeActive");
         } else {
             needChangeEle.removeClass("changeActive");
             changeInputs.val("");
-            $(".submitBtn").removeAttr("style");
+
+            $.contains(ele.parent().get(0), ele.siblings(".submitBtn").get(0)) && ele.siblings(".submitBtn").removeAttr("style");
         }
     }
 
-    // function validate (ele) {
-    //     hasTip = false;
-    //     var attr = ele.attr("data-role");
-    //     var formTips = (ele.nextAll(".form-tips").length != 0) ? ele.nextAll(".form-tips") : $("#txtAddress").nextAll(".form-tips");
-    //     if (attr) {
-    //         var role = eval(attr);
-    //         var val = ele.val();
-    //         if (role && role.length > 0) {
-    //             if (!val || val.length == 0 || val == "0") {
-    //                 if (!hasTip) {
-    //                     formTips.html( (ele.is("select") ? "请选择" : "请输入") + role[0].name ).show();
-    //                     hasTip = true;
-    //                 }
-    //                 return false;
-    //             }
-    //             if (role[0].reg && !eval(role[0].reg).test(val)) {
-    //                 if (!hasTip) {
-    //                     formTips.html(role[0].name + "格式不正确，请检查").show();
-    //                     hasTip = true;
-    //                 }
-    //                 return false;
-    //             }
-    //         }
-    //     }
-    //     return true;
-    // }
-
-    function validate (ele) {
-        var attr = ele.attr("data-role");
-        if (attr) {
-            var role = eval(attr);
-            var eleValue = ele.val();
-            if (role && role.length > 0) {
-                if (!eleValue || eleValue.length == 0 || eleValue == "0") {
-                    if (!hasTip) {
-                        // formTips.html( (ele.is("select") ? "请选择" : "请输入") + role[0].name ).show();
-                        alert( (ele.is("select") ? "请选择" : "请输入") + role[0].name )
-                        hasTip = true;
-                    }
-                    return false;
-                }
-                if (role[0].reg && !eval(role[0].reg).test(eleValue)) {
-                    if (!hasTip) {
-                        // formTips.html(role[0].name + "格式不正确，请检查").show();
-                        alert( role[0].name + "格式不正确，请检查" )
-                        hasTip = true;
-                    }
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
+    // 修改个人信息
     $("#submitChange").on("click", function () {
         var catchErr = false,
             changeColumns = $("#personalInfo .column-second");
@@ -119,36 +64,36 @@ $(document).ready(function () {
         }
 
         // if ($("#changeName").parent().hasClass("changeActive")) {
-        //     needChange = true;
-        //     if ($("#changeName").val() == "" || $("#changeName").val().length == 0) {
-        //         alert("请填写姓名");
-        //         $("#changeName").focus();
-        //         return false;
-        //     }
-        // }
-        // if ($("#changeJob").parent().hasClass("changeActive")) {
-        //     needChange = true;
-        //     if ($("#changeJob").val() == "" || $("#changeJob").val().length == 0) {
-        //         alert("请填写职位");
-        //         $("#changeJob").focus();
-        //         return false;
-        //     }
-        // }
-        // if ($("#changeCompany").parent().hasClass("changeActive")) {
-        //     needChange = true;
-        //     if ($("#changeCompany").val() == "" || $("#changeCompany").val().length == 0) {
-        //         alert("请填写公司");
-        //         $("#changeCompany").focus();
-        //         return false;
-        //     }
-        // }
-        // if ($("#changeTel").parent().hasClass("changeActive")) {
-        //     needChange = true;
-        //     if ($("#changeTel").val() == "" || $("#changeTel").val().length == 0) {
-        //         alert("请填写电话");
-        //         $("#changeTel").focus();
-        //         return false;
-        //     }
+            //     needChange = true;
+            //     if ($("#changeName").val() == "" || $("#changeName").val().length == 0) {
+            //         alert("请填写姓名");
+            //         $("#changeName").focus();
+            //         return false;
+            //     }
+            // }
+            // if ($("#changeJob").parent().hasClass("changeActive")) {
+            //     needChange = true;
+            //     if ($("#changeJob").val() == "" || $("#changeJob").val().length == 0) {
+            //         alert("请填写职位");
+            //         $("#changeJob").focus();
+            //         return false;
+            //     }
+            // }
+            // if ($("#changeCompany").parent().hasClass("changeActive")) {
+            //     needChange = true;
+            //     if ($("#changeCompany").val() == "" || $("#changeCompany").val().length == 0) {
+            //         alert("请填写公司");
+            //         $("#changeCompany").focus();
+            //         return false;
+            //     }
+            // }
+            // if ($("#changeTel").parent().hasClass("changeActive")) {
+            //     needChange = true;
+            //     if ($("#changeTel").val() == "" || $("#changeTel").val().length == 0) {
+            //         alert("请填写电话");
+            //         $("#changeTel").focus();
+            //         return false;
+            //     }
         // }
         
         var personInfo = {
@@ -158,7 +103,6 @@ $(document).ready(function () {
             tel: $.trim($("#changeTel").val())
         }
 
-        console.log(personInfo);
         changeColumns.each(function () {
             var inputEle = $(this).children("input");
             var infoValue = $(this).children(".info-name");
@@ -170,10 +114,147 @@ $(document).ready(function () {
                 inputEle.val("");
             }
         });
-        $(".info-column").removeClass("changeActive");
-        $(".cancelBtn").removeAttr("style");
-        $(".changeBtn").css("display", "inline-block");
-        alert("提交成功，请等待审核");
+        $("#personalInfo .info-column").removeClass("changeActive");
+        $("#personalInfo .cancelBtn").removeAttr("style");
+        $("#personalInfo .changeBtn").css("display", "inline-block");
+        alert("提交成功");
         $(this).prop("disabled", true);
     });
+
+
+
+    
+    var mobileInput = $("#changeMobile"),
+        emailInput = $("#changeEmail"),
+        valicode = $("#valicode"),
+        getValicodeBtn = $("#getValicode");
+
+    var num = 59,
+        timer = null;
+    // 倒计时
+    function countdown() {
+        num--;
+        if (num <= 0) {
+            num = 59;
+            getValicodeBtn.prop("disabled", false).text("重新发送");
+            clearInterval(timer);
+            timer = null;
+            return;
+        }
+        getValicodeBtn.text(num + "s").prop("disabled", true);
+    }
+    // 获取手机验证码
+    getValicodeBtn.on("click", function () {
+        if ($(this).prop("disabled")) {
+            return;
+        }
+        if (mobileInput.val() == "") {
+            alert("请填写新的手机号码");
+            mobileInput.focus();
+            return false;
+        } else if (!/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/.test(mobileInput.val())) {
+            alert("手机号码格式不对，请检查");
+            mobileInput.focus();
+            return false;
+        } else {
+            // 请求获取登录验证码
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/NetWorking/ApiSendCode",
+            //     data: { mobile: mobileInput.val() },
+            //     dataType: "json",
+            //     success: function (data) {
+            //         if (data.Code == 0) {
+            //             valicodeMobile.css("display", "block");
+            //             getValicode.css("display", "none");
+            //             validateTips.css("display", "none");
+            //             signInMobile.css("display", "block");
+            //             sendValicode.text(num + "s");
+            //             timer = setInterval(function () {
+            //                 countdown();
+            //             }, 1000);
+            //         } else {
+            //             alert(data.Message);
+            //         }
+            //     }
+            // });
+
+            $(this).text(num + "s").prop("disabled", true);
+            timer = setInterval(function () {
+                countdown();
+            }, 1000);
+        }
+    });
+    // 修改安全信息（手机，邮箱）
+    $("#securityInfo .submitBtn").on("click", function () {
+        validate($(this));
+    })
+
+    function validate (btnEle) {
+        var btn = btnEle.get(0),
+            changeColumn = btnEle.closest(".info-group").children(".column-second, .column-third"),
+            changeMobileEle = mobileInput.prev(".info-name"),
+            changeEmailEle = emailInput.prev(".info-name");
+        
+        if (changeColumn.hasClass("changeActive")) {
+            switch (btn.id) {
+                case "submitMobile":
+                    if (mobileInput.val() == "" || mobileInput.length == 0) {
+                        alert("请填写新的手机号码")
+                        mobileInput.focus();
+                        return false;
+        
+                    } else if (!/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/.test(mobileInput.val())) {
+                        alert("手机号码格式不正确，请检查");
+                        mobileInput.focus();
+                        return false;
+                    }
+                    if (valicode.val() == "" || valicode.val().length == 0) {
+                        alert("请填写验证码")
+                        valicode.focus();
+                        return false;
+                    } else if ( !/^\d{6}$/.test( $.trim(valicode.val()) ) ) {
+                        alert("验证码是6位数字哦。")
+                        valicode.focus();
+                        return false;
+                    }
+                    var changeMobileObj = {
+                        mobile: $.trim(mobileInput.val()),
+                        valicode: $.trim(valicode.val())
+                    }
+                    
+                    changeMobileEle.text(mobileInput.val());
+                    mobileInput.val("");
+                    valicode.val("");
+                    num = 59;
+                    clearInterval(timer);
+                    getValicodeBtn.prop("disabled", false).text("发送手机验证码");
+                    alert("提交成功")
+                    break;
+                case "submitEmail":
+                    if (emailInput.val() == "" || emailInput.val().length == 0) {
+                        alert("请填写邮箱")
+                        emailInput.focus();
+                        return false;
+                    } else if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(emailInput.val())) {
+                        alert("邮箱格式不正确，请检查");
+                        emailInput.focus();
+                        return false;
+                    }
+                    var changeEmailObj = {
+                        email: $.trim(emailInput.val())
+                    }
+                    changeEmailEle.text(emailInput.val());
+                    emailInput.val("");
+                    alert("提交成功");
+                    break;
+            }
+            changeColumn.removeClass("changeActive");
+            btnEle.removeAttr("style").prev(".cancelBtn").removeAttr("style");
+            btnEle.prevAll(".changeBtn").css("display", "inline-block");
+        } else {
+            return false;
+        }
+    }
+
 });
