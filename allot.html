@@ -62,7 +62,7 @@
                     </div>
                     <div class="allot-info">
                         <div class="container">
-                            <p class="allot-desc lt">本订单中，你购买了<span class="ticket-count">3</span>张VIP门票，已分配了<span class="ticket-count">3</span>张，还有<span class="ticket-count">1</span>张门票未分配。</p>
+                            <p class="allot-desc lt">本订单中，你购买了<span class="ticket-count">3</span>张VIP门票，已分配了<span class="ticket-count">2</span>张，还有<span id="noallotCount" class="ticket-count">1</span>张门票未分配。</p>
                             <p class="privilege lt">VIP票权益：峰会+展览+VIP午餐&VIP晚宴</p>
                         </div>
                     </div>
@@ -74,30 +74,30 @@
                                 <h3 class="allot-title">
                                     已分配门票信息（<span class="ticket-count">1</span>）张
                                 </h3>
-                                <ul class="allot-subcontent">
-                                    <li class="allot-subitem">
+                                <ul class="alloted">
+                                    <li class="alloted-item">
                                         <span class="allot-name">李柔</span>
                                         <b class="divide"></b>
                                         <span class="allot-nameEN">Rou Li</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-company">爱彼迎</span>
                                         <b class="divide"></b>
                                         <span class="allot-companyEN">Airbnb</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-job">总经理</span>
                                         <b class="divide"></b>
                                         <span class="allot-jobEN">Executive</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-industry">旅游民宿公司</span>
                                         <b class="divide"></b>
                                         <span class="allot-function">高层管理</span>
                                         <b class="divide"></b>
                                         <span class="allot-sex">先生</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-mobile">18618666186</span>
                                         <b class="divide"></b>
                                         <span class="allot-tel">020 - 88888888</span>
@@ -106,30 +106,30 @@
                                         <button class="changeAllotBtn rt">修改</button>
                                     </li>
                                 </ul>
-                                <ul class="allot-subcontent">
-                                    <li class="allot-subitem">
+                                <ul class="alloted">
+                                    <li class="alloted-item">
                                         <span class="allot-name">李柔</span>
                                         <b class="divide"></b>
                                         <span class="allot-nameEN">Rou Li</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-company">爱彼迎</span>
                                         <b class="divide"></b>
                                         <span class="allot-companyEN">Airbnb</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-job">总经理</span>
                                         <b class="divide"></b>
                                         <span class="allot-jobEN">Executive</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-industry">旅游民宿公司</span>
                                         <b class="divide"></b>
                                         <span class="allot-function">高层管理</span>
                                         <b class="divide"></b>
                                         <span class="allot-sex">先生</span>
                                     </li>
-                                    <li class="allot-subitem">
+                                    <li class="alloted-item">
                                         <span class="allot-mobile">18618666186</span>
                                         <b class="divide"></b>
                                         <span class="allot-tel">020 - 88888888</span>
@@ -145,15 +145,15 @@
                     <div class="allot-list">
                         <div class="allot-title-bg"></div>
                         <div class="allot-item">
-                            <div class="container">
+                            <div id="noallot" class="container">
                                 <h3 class="allot-title">
                                     未分配门票信息（<span class="ticket-count">2</span>）张
                                 </h3>
                                 <p class="allot-subtips">系统将会根据您此前的参会历史，为您匹配历史参会人信息，信息可能存在偏差，您可以进行更新。</p>
-                                <ul class="add-allot-form">
+                                <ul class="addallot-form">
                                     <li class="form-group">
                                         <div class="form-item lt">
-                                            <input class="allot-input" type="text" placeholder="中文姓名">
+                                            <input class="allot-input" type="text" placeholder="中文姓名" data-role='[{ "name": "中文姓名" }]'>
                                             <p class="form-tips">请输入中文姓名</p>
                                         </div>
                                         <div class="form-item rt">
@@ -357,5 +357,8 @@
             <button id="submitChangeAllot" class="submitChangeAllot">确认修改</button>
         </div>
     </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/allot.js"></script>
 </body>
 </html>

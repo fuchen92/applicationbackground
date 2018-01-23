@@ -61,21 +61,21 @@ input:focus, select:focus {
     height: 40px;
     line-height: 40px;
 }
-.allot-subcontent {
+.alloted {
     margin: 20px 0 30px;
 }
-.allot-subcontent:not(:last-child) {
+.alloted:not(:last-child) {
     padding-bottom: 30px;
     border-bottom: 1px solid #EDEDEE;
 }
-.allot-subitem {
+.alloted-item {
     height: 25px;
     line-height: 25px;
     margin: 5px 0;
     font-size: 16px;
     overflow: hidden;
 }
-.allot-subitem .divide {
+.alloted-item .divide {
     display: inline-block;
     vertical-align: middle;
     height: 15px;
@@ -104,9 +104,14 @@ input:focus, select:focus {
     padding-left: 30px;
     background: url(img/question.png) left center no-repeat;
 }
-.add-allot-form {
+.addallot-form {
     width: 95%;
     margin: 0 auto;
+}
+.addallot-form:not(:nth-last-of-type(1)) {
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 55px;
+    padding-bottom: 20px;
 }
 .form-group {
     overflow: hidden;

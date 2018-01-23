@@ -169,6 +169,24 @@
     right: 18px;
 }
 
+    /* 没有付款订单情况 */
+.nopay-order {
+    height: 120px;
+}
+.nopayorder-text {
+    color: #CDCDCD;
+    margin-bottom: 10px;
+}
+.allticket-link {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #133485;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 2px;
+}
+
 /********** 说明 **********/
 .pay-tips {
     overflow: hidden;

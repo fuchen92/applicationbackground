@@ -70,7 +70,7 @@
                     <div class="order-list active">
                         <div class="graybg"></div>
                         <div class="container">
-                            <table class="order-table" cellspacing="0" cellpadding="0">
+                            <table id="orderTable" class="order-table" cellspacing="0" cellpadding="0">
                                 <thead>
                                     <tr class="thead">
                                         <th>订单号</th>
@@ -550,6 +550,16 @@
                                     <tr>
                                         <td class="white-divide" colspan="8"></td>
                                     </tr>
+                                    <!-- 没有已支付的情况 -->
+                                    <tr>
+                                        <td class="nopay-order" colspan="8">
+                                            <p class="nopayorder-text">暂无已付款订单~</p>
+                                            <a class="allticket-link" href="order.html">查看全部订单</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <div class="pay-tips">
@@ -574,6 +584,13 @@
                 var index = $(this).index();
                 $(this).addClass("active").siblings().removeClass("active");
                 $(".order-list").eq(index).addClass("active").siblings().removeClass("active");
+            });
+
+            $("#orderTable .cancel-order").on("click", function () {
+                var r = window.confirm("您确定要取消订单吗？")
+                if (r) {
+                    $(this).parent("td").empty().append("<span class='already-cancel'>已取消</span>");
+                }
             });
         });
     </script>
