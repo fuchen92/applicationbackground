@@ -27,7 +27,11 @@ input:focus, select:focus {
     height: 65px;
     background-color: #fff;
 }
+.allot-info > .container {
+    overflow: visible;
+}
 .allot-desc {
+    position: relative;
     font-size: 14px;
     height: 20px;
     line-height: 20px;
@@ -37,13 +41,43 @@ input:focus, select:focus {
     color: #E54144;
 }
 .privilege {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 20px;
+    background-color: #CFD7E7;
+    font-size: 14px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.privilege-text {
+    position: absolute;
+    top: -52px;
+    left: -125px;
     font-size: 12px;
     height: 20px;
     line-height: 20px;
     margin-top: 22px;
-    background-color: #F8F5F0;
-    color: #AF9A71;
-    padding: 0 20px;
+    background-color: #CFD7E7;
+    color: #181818;
+    padding: 0 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+    display: none;
+}
+.privilege-text::after {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    content: "";
+    border: 7px solid transparent;
+    border-top-color: #CFD7E7;
+}
+.privilege:hover .privilege-text {
+    display: inline-block;
 }
 
 /********** 已分配信息列表 **********/
@@ -56,6 +90,9 @@ input:focus, select:focus {
 }
 .allot-item {
     margin-top: -40px;
+}
+#alloted {
+    padding-bottom: 30px;
 }
 .allot-title {
     height: 40px;

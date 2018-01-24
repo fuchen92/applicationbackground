@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    // 未分配门票数量
-    // var noAllotCount = $("#noallotCount").text(),
-    var noAllotCount = 2,
+    var allotedContainer = $("#alloted");
+
+    var noAllotCount = Number($("#noallotCount").text()),               // 未分配数量
+        alreadyAllotCount = Number($("#alreadyAllot").text()),          // 已分配数量
         addAnother = $("#addAnother"),
         submitAllot = $("#submitAllot");
 
@@ -11,13 +12,17 @@ $(document).ready(function () {
     noAllotCount - 1 <= 0 && addAnother.remove();
 
     // 添加下一个被分配人
+    var canAddCount = noAllotCount;
     addAnother.on("click", function () {
-        noAllotCount--;
+        canAddCount--;
         var tem = $(".addallot-form").eq(0).clone();
+        tem.find(":input[type=text]").val("");
+        tem.find("select").val(0);
+        tem.find(".form-tips").removeAttr("style");
         addAnother.parent().before(tem);
-        if (noAllotCount - 1 <= 0) {
+        if (canAddCount - 1 <= 0) {
             addAnother.remove();
-        }        
+        }
     });
 
     // 验证函数
@@ -47,13 +52,22 @@ $(document).ready(function () {
         }
         return true;
     }
-    $(".addallot-form").on("click keyup",":input",function() {
+    $("#noallot").on("click keyup",".addallot-form :input",function() {
         $(".form-tips").html("").removeAttr("style");
     });
+
+    // var isRepeat = false;  
+    var catchErr = false;  
     // 保存分配信息
     submitAllot.on("click", function () {
-        var allotUsers = [], catchErr = false;        
+        var allotUsers = [];
+
         var allotForms = noAllotContainer.children(".addallot-form");
+
+        var mobileArr = [],
+            emailArr = [];
+
+        catchErr = false;
 
         allotForms.each(function () {
             var inputs = $(this).find(":input");
@@ -61,25 +75,174 @@ $(document).ready(function () {
                 var currInput = $(this);
                 if (!validate(currInput)) {
                     catchErr = true;
+                    currInput.focus();
+                    return false;
                 }
             })
+            if (catchErr) {
+                return false;
+            }
+            allotUsers.push({
+                NameCn: $.trim(inputs.eq(0).val()),
+                NameEn: $.trim(inputs.eq(1).val()),
+                CompanyCn: $.trim(inputs.eq(2).val()),
+                CompanyEn: $.trim(inputs.eq(3).val()),
+                JobTitleCn: $.trim(inputs.eq(4).val()),
+                JobTitleEn: $.trim(inputs.eq(5).val()),
+                Mobile: $.trim(inputs.eq(6).val()),
+                Tel: $.trim(inputs.eq(7).val()),
+                Mail: $.trim(inputs.eq(8).val()),
+                Industry: $.trim(inputs.eq(9).val()),
+                JobFunction: $.trim(inputs.eq(10).val()),
+                Sex: $.trim(inputs.eq(11).val()),
+            })
         });
+        if (catchErr) {
+            return false;
+        }
+        
+
+        $(".mobile").each(function () {
+            var currVal = $(this).is("input") ? $.trim($(this).val()) : $(this).text()
+            mobileArr.push(currVal)
+        })
+        $(".email").each(function () {
+            var currVal = $(this).is("input") ? $.trim($(this).val()) : $(this).text()
+            emailArr.push(currVal)
+        })
+        valiRepeat(mobileArr, $(".mobile"), "手机号码");
+        if (catchErr) {
+            return false;
+        }
+        valiRepeat(emailArr, $(".email"), "邮箱地址");
+        if (catchErr) {
+            return false;
+        }
+        
+        var order = { UserList: allotUsers };
+        // $.ajax({
+        //     url: "OrderCreate",
+        //     type: "POST",
+        //     dataType: "json",
+        //     contentType: "application/json; charset=utf-8",
+        //     data: JSON.stringify({ "order": order }),
+        //     cache: false,
+        //     success: function (js) {
+        //         if (js.Code == 0) {
+        //             alert("提交成功")
+        //         } else {
+        //             alert("提交失败，请稍后再试")
+        //         }
+        //     },
+        //     error: function (error) {
+        //         console.log(error)
+        //     }
+        // });
+        generateAlloted(allotUsers);
+        noAllotCount -= allotUsers.length;
+        noAllotCount - 1 <= 0 && addAnother.remove();
+        if (noAllotCount < 0) {
+            noAllotCount = 0;
+        }
+        alreadyAllotCount += allotUsers.length;
+        $(".noallot-count").eq(0).text(noAllotCount);
+        $(".noallot-count").eq(1).text(noAllotCount);
+        $(".already-allot").eq(0).text(alreadyAllotCount);
+        $(".already-allot").eq(1).text(alreadyAllotCount);
+        noAllotCount - allotUsers.length < 0 && $("#noallotContainer").remove();
+        console.log(noAllotCount)
+        console.log("提交成功啦")
+        noAllotContainer.find(":input[type=text]").val("");
+        noAllotContainer.find("select").val(0);
     });
 
+    // 验证手机和邮箱重复的函数
+    function valiRepeat (objArr, elem, type) {
+        for (var i = 0; i < objArr.length; i++) {
+            var objValue = objArr[i];
+            for (var j = 0; j < objArr.length; j++) {
+                if (objArr[j] == objValue && j != i) {
+                    elem.eq(j).focus();
+                    elem.eq(j).next().text(type + "重复，请检查").show();
+                    catchErr = true;
+                    return false;
+                }
+            }
+            if (catchErr) {
+                return false;
+            }
+        }
+    }
 
-    // var arr = [
-    //     [0,1,2],
-    //     [3,4,5],
-    //     [6,7,8]
-    // ]
-    // $(arr).each(function () {
-    //     var currArr = $(this);
+    // 生成已分配信息
+    function generateAlloted (objArr) {
+        var str = "";
+        for (var i = 0; i < objArr.length; i++) {
+            str += "<ul class='alloted'>" + 
+                        "<li class='alloted-item'>" +
+                            "<span class='allot-name'>" + objArr[i].NameCn +"</span>" +
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-nameEN'>" + objArr[i].NameEn + "</span>" +
+                        "</li>" +
+                        "<li class='alloted-item'>" + 
+                            "<span class='allot-company'>" + objArr[i].CompanyCn + "</span>" + 
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-companyEN'>" + objArr[i].CompanyEn + "</span>" + 
+                        "</li>" +
+                        "<li class='alloted-item'>" + 
+                            "<span class='allot-job'>" + objArr[i].JobTitleCn + "</span>" + 
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-jobEN'>" + objArr[i].JobTitleEn + "</span>" + 
+                        "</li>" +
+                        "<li class='alloted-item'>" + 
+                            "<span class='allot-industry'>" + $(".allot-select").eq(0).children("option[value=" + objArr[i].Industry + "]").text() + "</span>" + 
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-function'>" + $(".allot-select").eq(1).children("option[value=" + objArr[i].JobFunction + "]").text() + "</span>" + 
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-sex'>" + $(".allot-select").eq(2).children("option[value=" + objArr[i].Sex + "]").text() + "</span>" +
+                        "</li>" +
+                        "<li class='alloted-item'>" + 
+                            "<span class='allot-mobile mobile'>" + objArr[i].Mobile + "</span>" + 
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-tel'>" + objArr[i].Tel + "</span>" + 
+                            "<b class='divide'></b>" + 
+                            "<span class='allot-email email'>" + objArr[i].Mail + "</span>" + 
+                            "<button class='changeAllotBtn rt'>修改</button>" +
+                        "</li>" +
+                    "</ul>"
+        }
+        allotedContainer.append(str)
+    }
 
-    //     currArr.each(function (index, val) {
-    //         if (index == 2) {
-    //             return false;
-    //         }
-    //         console.log("下标：" + index, "值：" + val)
-    //     })
-    // })
+
+    var changeDialog = $("#changeDialog"),
+        submitChangeAllot = $("#submitChangeAllot");
+
+    var changeLis = changeDialog.find(".form-group");
+    // 修改分配信息
+    allotedContainer.on("click", ".changeAllotBtn", function () {
+        // var inputs = changeDialog.find(":input:not(button)");
+        var lis = $(this).closest(".alloted").children("li");
+        lis.each(function (index, item) {
+            var item = $(item);
+            var allotVals = item.children(".allotVal");
+            console.log(allotVals);
+            if (index < 3) {
+                allotVals.each(function (idx) {
+                    changeLis.eq(index).find(":input").eq(idx).val(item.children(".allotVal").eq(idx).text())
+                })
+            }
+            if (index == 3) {
+                
+            }
+        });
+        
+        changeDialog.css("display", "block");
+    });
+    $(".changeAllot-close").on("click", function () {
+        changeDialog.removeAttr("style");
+    });
+    submitChangeAllot.on("click", function () {
+
+    });
 });
