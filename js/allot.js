@@ -151,7 +151,7 @@ $(document).ready(function () {
         $(".already-allot").eq(1).text(alreadyAllotCount);
         noAllotCount - allotUsers.length < 0 && $("#noallotWrapper").remove();
         console.log(noAllotCount)
-        console.log("提交成功啦")
+        alert("提交成功啦")
         noAllotContainer.find(":input[type=text]").val("");
         noAllotContainer.find("select").val(0);
     });
@@ -253,9 +253,14 @@ $(document).ready(function () {
         $("#changeTel").val(lis.eq(4).find(".tel").text());
         $("#changeEmail").val(lis.eq(4).find(".email").text());
 
-        $("#changeIndustry option[value=" + alloted.attr("data-industry") + "]").prop("selected", true);
-        $("#changeFunction option[value=" + alloted.attr("data-function") + "]").prop("selected", true);
-        $("#changeSex option[value=" + alloted.attr("data-sex") + "]").prop("selected", true);
+        // $("#changeIndustry option[value=" + alloted.attr("data-industry") + "]").prop("selected", true);
+        $("#changeIndustry").val(alloted.attr("data-industry"));
+
+        // $("#changeFunction option[value=" + alloted.attr("data-function") + "]").prop("selected", true);
+        $("#changeFunction").val(alloted.attr("data-function"));
+
+        // $("#changeSex option[value=" + alloted.attr("data-sex") + "]").prop("selected", true);
+        $("#changeSex").val(alloted.attr("data-sex"));
         
         changeDialog.css("display", "block");
     });
@@ -355,7 +360,7 @@ $(document).ready(function () {
 
         $(".changeAllot-close").trigger("click");
 
-        console.log("修改成功啦")
+        alert("修改成功啦")
         
     });
 });

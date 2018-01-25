@@ -70,7 +70,7 @@
                     <div class="allot-list">
                         <div class="allot-title-bg"></div>
                         <div class="container">
-                            <table class="allot-table" cellspacing="0" cellpadding="0">
+                            <table id="allotTable" class="allot-table" cellspacing="0" cellpadding="0">
                                 <thead>
                                     <tr class="thead">
                                         <th>&nbsp;</th>
@@ -91,57 +91,65 @@
                                         <td class="white-divide" colspan="10"></td>
                                     </tr>
                                     <tr class="hasborder" style="border: 0;">
-                                        <td class="already-allot" rowspan="5">已分配门票</td>
+                                        <td class="already-allot" rowspan="5" style="border: none;">已分配门票</td>
                                         <td colspan="9" style="border: 0; height: 0;"></td>
                                     </tr>
-                                    <tr class="hasborder">
+                                    <tr class="hasborder alloted" data-nameen="zhangsan" data-companyen="gonganju" data-joben="jingcha" data-tel="110" data-industry="76" data-function="3" data-sex="1">
                                         <td>1</td>
-                                        <td>张三</td>
-                                        <td>男</td>
-                                        <td>中华人民共和国</td>
-                                        <td>经理</td>
-                                        <td>13911112222</td>
-                                        <td>fuchen@qq.com</td>
-                                        <td>vip票</td>
+                                        <td class="nameCN">张三</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">公安局</td>
+                                        <td class="jobCN">警察</td>
+                                        <td class="mobile">15958144605</td>
+                                        <td class="email">110@qq.com</td>
+                                        <td>
+                                            <span class="ticket-type">vip票</span>
+                                        </td>
                                         <td>
                                             <button class="changeBtn">修改</button>
                                         </td>
                                     </tr>
-                                    <tr class="hasborder">
+                                    <tr class="hasborder alloted" data-nameen="zhangsan" data-companyen="yiyuan" data-joben="yisheng" data-tel="120" data-industry="76" data-function="3" data-sex="1">
                                         <td>2</td>
-                                        <td>张三</td>
-                                        <td>男</td>
-                                        <td>中华人民共和国</td>
-                                        <td>经理</td>
-                                        <td>13911112222</td>
-                                        <td>fuchen@qq.com</td>
-                                        <td>vip票</td>
+                                        <td class="nameCN">李四</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">医院</td>
+                                        <td class="jobCN">医生</td>
+                                        <td class="mobile">15958144606</td>
+                                        <td class="email">120@qq.com</td>
+                                        <td>
+                                            <span class="ticket-type">vip票</span>
+                                        </td>
                                         <td>
                                             <button class="changeBtn">修改</button>
                                         </td>
                                     </tr>
-                                    <tr class="hasborder">
+                                    <tr class="hasborder alloted" data-nameen="zhangsan" data-companyen="xiaofangju" data-joben="huojing" data-tel="119" data-industry="76" data-function="3" data-sex="1">
                                         <td>3</td>
-                                        <td>张三</td>
-                                        <td>男</td>
-                                        <td>中华人民共和国</td>
-                                        <td>经理</td>
-                                        <td>13911112222</td>
-                                        <td>fuchen@qq.com</td>
-                                        <td>vip票</td>
+                                        <td class="nameCN">王五</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">消防局</td>
+                                        <td class="jobCN">火警</td>
+                                        <td class="mobile">15958144607</td>
+                                        <td class="email">119@qq.com</td>
+                                        <td>
+                                            <span class="ticket-type">vip票</span>
+                                        </td>
                                         <td>
                                             <button class="changeBtn">修改</button>
                                         </td>
                                     </tr>
-                                    <tr class="hasborder">
+                                    <tr class="hasborder alloted" data-nameen="zhaoliu" data-companyen="xuexiao" data-joben="laoshi" data-tel="115" data-industry="76" data-function="3" data-sex="1">
                                         <td>4</td>
-                                        <td>张三</td>
-                                        <td>男</td>
-                                        <td>中华人民共和国</td>
-                                        <td>经理</td>
-                                        <td>13911112222</td>
-                                        <td>fuchen@qq.com</td>
-                                        <td>vip票</td>
+                                        <td class="nameCN">赵六</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">学校</td>
+                                        <td class="jobCN">老师</td>
+                                        <td class="mobile">15958144603</td>
+                                        <td class="email">115@qq.com</td>
+                                        <td>
+                                            <span class="ticket-type">vip票</span>
+                                        </td>
                                         <td>
                                             <button class="changeBtn">修改</button>
                                         </td>
@@ -172,58 +180,58 @@
         </div>
     </div>
     <!-- 修改分配信息对话框 -->
-    <div class="changeAllot-dialog">
+    <div id="changeDialog" class="changeAllot-dialog">
         <div class="changeAllot-bg"></div>
-        <div class="changeAllot-close">×</div>
+        <div id="closeDialog" class="changeAllot-close">×</div>
         <div class="changeAllot-content">
-            <ul class="changeAllot-form">
+            <ul id="changeForm" class="changeAllot-form">
                 <li class="form-group">
                     <div class="form-item lt">
-                        <input class="allot-input" type="text" placeholder="中文姓名">
+                        <input class="allot-input" type="text" placeholder="中文姓名" data-role='[{ "name": "中文姓名" }]'>
                         <p class="form-tips">请输入中文姓名</p>
                     </div>
                     <div class="form-item rt">
-                        <input class="allot-input" type="text" placeholder="英文姓名">
+                        <input class="allot-input" type="text" placeholder="英文姓名" data-role='[{ "name": "英文姓名" }]'>
                         <p class="form-tips">请输入英文姓名</p>
                     </div>
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
-                        <input class="allot-input" type="text" placeholder="中文公司名称">
+                        <input class="allot-input" type="text" placeholder="中文公司名称" data-role='[{ "name": "中文公司名称" }]'>
                         <p class="form-tips">请输入中文公司名称</p>
                     </div>
                     <div class="form-item rt">
-                        <input class="allot-input" type="text" placeholder="英文公司名称">
+                        <input class="allot-input" type="text" placeholder="英文公司名称" data-role='[{ "name": "英文公司名称" }]'>
                         <p class="form-tips">请输入英文公司名称</p>
                     </div>
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
-                        <input class="allot-input" type="text" placeholder="中文职位名称">
+                        <input class="allot-input" type="text" placeholder="中文职位名称" data-role='[{ "name": "中文职位名称" }]'>
                         <p class="form-tips">请输入中文职位名称</p>
                     </div>
                     <div class="form-item rt">
-                        <input class="allot-input" type="text" placeholder="英文职位名称">
+                        <input class="allot-input" type="text" placeholder="英文职位名称" data-role='[{ "name": "英文职位名称" }]'>
                         <p class="form-tips">请输入英文职位名称</p>
                     </div>
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
-                        <input class="allot-input" type="text" placeholder="手机号码">
+                        <input id="changeMobile" class="allot-input" type="text" placeholder="手机号码" data-role='[{ "name": "手机号码", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
                         <p class="form-tips">请输入手机号码</p>
                     </div>
                     <div class="form-item rt">
-                        <input class="allot-input" type="text" placeholder="固话号码">
+                        <input class="allot-input" type="text" placeholder="固话号码" data-role='[{ "name": "固话号码" }]'>
                         <p class="form-tips">请输入固话号码</p>
                     </div>
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
-                        <input class="allot-input" type="text" placeholder="Email地址">
+                        <input id="changeEmail" class="allot-input" type="text" placeholder="Email地址" data-role='[{ "name": "Email地址", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
                         <p class="form-tips">请输入Email邮箱地址</p>
                     </div>
                     <div class="form-item rt">
-                        <select id="changeIndustry" class="allot-select">
+                        <select id="changeIndustry" class="allot-select" data-role='[{ "name": "行业" }]'>
                             <option value="0">请选择所在行业</option>
                             <option value="77">航空公司</option>
                             <option value="78">酒店</option>
@@ -252,7 +260,7 @@
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
-                        <select id="changeJob" class="allot-select">
+                        <select id="changeFunction" class="allot-select" data-role='[{ "name": "职能" }]'>
                             <option value="0">请选择职能</option>
                             <option value="1">高层管理</option>
                             <option value="2">市场</option>
@@ -261,7 +269,7 @@
                         <p class="form-tips">请选择职能</p>
                     </div>
                     <div class="form-item rt">
-                        <select id="changeSex" class="allot-select">
+                        <select id="changeSex" class="allot-select" data-role='[{ "name": "称谓" }]'>
                             <option value="0">请选择性别</option>
                             <option value="1">先生</option>
                             <option value="2">女士</option>
@@ -273,5 +281,8 @@
             <button id="submitChangeAllot" class="submitChangeAllot">确认修改</button>
         </div>
     </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/attendsManage.js"></script>
 </body>
 </html>

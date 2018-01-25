@@ -1,5 +1,7 @@
 /********** 参会人员信息管理 **********/
-
+input:focus, select:focus {
+    border: 1px solid #565656;
+}
 /********** 参会人员详细内容 **********/
 .attends-content {
     overflow: hidden;
@@ -63,13 +65,22 @@
     border: 1px solid #DEDEDE;
 }
 .hasborder > td {
-    border: 1px solid #DEDEDE;
+    /* border: 1px solid #DEDEDE; */
 }
 td {
     height: 45px;
 }
+.ticket-type {
+    padding: 5px 15px;
+    background: #EEEEEE;
+    border-radius: 20px;
+    color: #113689;
+}
 .already-allot {
     font-weight: bold;
+    border: none;
+    background-color: #1E66AC;
+    color: #fff;
 }
 .no-allot {
     height: 120px;
@@ -81,7 +92,7 @@ td {
     line-height: 30px;
     text-align: center;
     background-color: #fff;
-    color: #113689;
+    color: #1E66AC;
     cursor: pointer;
 }
 
