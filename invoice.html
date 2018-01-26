@@ -57,31 +57,32 @@
                 <div class="invoice-detail rt">
                     <div class="invoice-title-box">
                         <div class="container">
-                            <h3 class="invoice-title">我的发票</h3>
+                            <h3 class="invoice-title">发票管理</h3>
+                        </div>
+                    </div>
+                    <div class="invoice-info">
+                        <div class="container">
+                            <p class="invoice-desc"></p>
                         </div>
                     </div>
                     <!-- 没有发票信息的情况 -->
-                    <div class="invoice-info">
-                        <div class="container">
-                            <p class="invoice-desc">请填写您的发票信息</p>
-                        </div>
-                    </div>
                     <div class="add-invoice">
                         <div class="invoice-title-bg"></div>
                         <div class="container">
-                            <h3 class="invoice-caption">发票内容</h3>
-                            <ul class="add-invoice-form">
+                            <h3 class="invoice-caption">发票信息</h3>
+                            <ul id="invoiceForm" class="add-invoice-form">
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <select id="chooseInvoice" class="invoice-select">
-                                            <option value="1">普通发票</option>
-                                            <option value="2">专用发票</option>
-                                            <option value="0">不需要发票</option>
+                                        <select id="invoiceType" class="invoice-select" data-role='[{ "name": "发票类型" }]'>
+                                            <!-- <option value="0">发票类型</option> -->
+                                            <option value="2">普通发票</option>
+                                            <option value="3">专用发票</option>
+                                            <option value="1">不需要发票</option>
                                         </select>
                                         <p class="form-tips">请选择发票类型</p>
                                     </div>
                                     <div class="form-item rt">
-                                        <select id="invoiceContent" class="invoice-select">
+                                        <select id="invoiceContent" class="invoice-select" data-role='[{ "name": "发票内容" }]'>
                                             <option value="0">发票内容</option>
                                             <option value="1">会议费</option>
                                             <option value="2">信息技术咨询服务费</option>
@@ -92,142 +93,176 @@
                                 </li>
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <input class="invoice-input" type="text" placeholder="发票抬头（公司注册名称）">
+                                        <input class="invoice-input" type="text" placeholder="发票抬头（公司注册名称）" data-role='[{ "name": "发票抬头" }]'>
                                         <p class="form-tips">请填写发票抬头</p>
                                     </div>
                                     <div class="form-item rt">
-                                        <input class="invoice-input" type="text" placeholder="纳税人识别号">
+                                        <input class="invoice-input" type="text" placeholder="纳税人识别号" data-role='[{ "name": "纳税人识别号" }]'>
                                         <p class="form-tips">请填写纳税人识别号</p>
                                     </div>
                                 </li>
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <input class="invoice-input candisable" type="text" placeholder="公司注册地址" disabled="disabled">
+                                        <input class="invoice-input candisable" type="text" placeholder="公司注册地址" disabled="disabled" data-role='[{ "name": "公司注册地址" }]'>
                                         <p class="form-tips">请填写公司注册地址</p>
                                     </div>
                                     <div class="form-item rt">
-                                        <input class="invoice-input candisable" type="text" placeholder="公司电话" disabled="disabled">
+                                        <input class="invoice-input candisable" type="text" placeholder="公司电话" disabled="disabled" data-role='[{ "name": "公司电话" }]'>
                                         <p class="form-tips">请填写公司电话</p>
                                     </div>
                                 </li>
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <input class="invoice-input candisable" type="text" placeholder="开户银行" disabled="disabled">
+                                        <input class="invoice-input candisable" type="text" placeholder="开户银行" disabled="disabled" data-role='[{ "name": "开户银行" }]'>
                                         <p class="form-tips">请填写开户银行</p>
                                     </div>
                                     <div class="form-item rt">
-                                        <input class="invoice-input candisable" type="text" placeholder="银行帐号" disabled="disabled">
+                                        <input class="invoice-input candisable" type="text" placeholder="银行帐号" disabled="disabled" data-role='[{ "name": "银行帐号" }]'>
                                         <p class="form-tips">请填写银行帐号</p>
                                     </div>
                                 </li>
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <select id="province" class="invoice-select">
+                                        <select id="province" class="invoice-select" data-role='[{ "name": "发票邮寄省份" }]'>
                                             <option value="0">发票邮寄省份</option>
+                                            <option value="1">北京市</option>
+                                            <option value="9">上海市</option>
+                                            <option value="19">广东省</option>
+                                            <option value="11">浙江省</option>
+                                            <option value="10">江苏省</option>
+                                            <option value="23">四川省</option>
+                                            <option value="2">天津市</option>
+                                            <option value="3">河北省</option>
+                                            <option value="4">山西省</option>
+                                            <option value="5">内蒙古自治区</option>
+                                            <option value="6">辽宁省</option>
+                                            <option value="7">吉林省</option>
+                                            <option value="8">黑龙江省</option>
+                                            <option value="12">安徽省</option>
+                                            <option value="13">福建省</option>
+                                            <option value="14">江西省</option>
+                                            <option value="15">山东省</option>
+                                            <option value="16">河南省</option>
+                                            <option value="17">湖北省</option>
+                                            <option value="18">湖南省</option>
+                                            <option value="20">广西壮族自治区</option>
+                                            <option value="21">海南省</option>
+                                            <option value="22">重庆市</option>
+                                            <option value="24">贵州省</option>
+                                            <option value="25">云南省</option>
+                                            <option value="26">西藏自治区</option>
+                                            <option value="27">陕西省</option>
+                                            <option value="28">甘肃省</option>
+                                            <option value="29">青海省</option>
+                                            <option value="30">宁夏回族自治区</option>
+                                            <option value="31">新疆维吾尔自治区</option>
                                         </select>
                                         <p class="form-tips">请选择发票邮寄省份</p>
                                     </div>
                                     <div class="form-item rt">
-                                        <select id="city" class="invoice-select">
+                                        <select id="city" class="invoice-select" data-role='[{ "name": "城市" }]'>
                                             <option value="0">城市</option>
+                                            <option value="1">北京</option>
+                                            <option value="2">上海</option>
+                                            <option value="3">广州</option>
+                                            <option value="4">深圳</option>
                                         </select>
                                         <p class="form-tips">请选择城市</p>
                                     </div>
                                 </li>
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <input class="invoice-input" type="text" placeholder="详细地址">
+                                        <input class="invoice-input" type="text" placeholder="详细地址" data-role='[{ "name": "详细地址" }]'>
                                         <p class="form-tips">请填写详细地址</p>
                                     </div>
                                     <div class="form-item rt">
-                                        <input class="invoice-input" type="text" placeholder="邮政编码">
+                                        <input id="postCode" class="invoice-input" type="text" placeholder="邮政编码" data-role='[{ "name": "邮政编码" }]'>
                                         <p class="form-tips">请填写邮政编码</p>
                                     </div>
                                 </li>
                             </ul>
-                            <button class="submitInvoice">确认提交</button>
+                            <button id="submitInvoice" class="submitInvoice">确认提交</button>
                         </div>
                     </div>
                     <!-- 有发票信息的情况 -->
                     <div class="invoice-content">
-                        <div class="container">
-                            <ul class="invoice-table">
-                                <li class="invoice-group">
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">发票类别：</span>
-                                        <span class="invoice-itemval">专用发票</span>
-                                    </div>
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">发票内容：</span>
-                                        <span class="invoice-itemval">会议费</span>
-                                    </div>
-                                </li>
-                                <li class="invoice-group">
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">发票抬头：</span>
-                                        <span class="invoice-itemval">中华人民共和国</span>
-                                    </div>
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">纳税人识别号：</span>
-                                        <span class="invoice-itemval">110120119</span>
-                                    </div>
-                                </li>
-                                <li class="invoice-group">
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">公司注册地址：</span>
-                                        <span class="invoice-itemval">广州越秀</span>
-                                    </div>
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">公司电话：</span>
-                                        <span class="invoice-itemval">110120119</span>
-                                    </div>
-                                </li>
-                                <li class="invoice-group">
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">开户银行：</span>
-                                        <span class="invoice-itemval">中国工商银行</span>
-                                    </div>
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">银行帐号：</span>
-                                        <span class="invoice-itemval">110120119</span>
-                                    </div>
-                                </li>
-                                <li class="invoice-group">
-                                    <div class="invoice-item lt">
-                                        <span class="invoice-label">邮寄地址：</span>
-                                        <span class="invoice-itemval">广东省 广州市 越秀区东风东路1号东峻广场1座2604室</span>
-                                    </div>
-                                    <button class="changeInvoiceBtn rt">修改发票信息</button>
-                                </li>
-                            </ul>
+                        <div class="invoice-panel">
+                            <h3 class="invoice-panel-title">发票信息</h3>
+                            <div class="invoice-panel-body">
+                                <ul id="invoiceTable" class="invoice-table">
+                                    <li class="invoice-group">
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">发票类别：</span>
+                                            <span class="invoice-itemval">专用发票</span>
+                                        </div>
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">发票内容：</span>
+                                            <span class="invoice-itemval">会议费</span>
+                                        </div>
+                                    </li>
+                                    <li class="invoice-group">
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">发票抬头：</span>
+                                            <span class="invoice-itemval">中华人民共和国</span>
+                                        </div>
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">纳税人识别号：</span>
+                                            <span class="invoice-itemval">110120119</span>
+                                        </div>
+                                    </li>
+                                    <li class="invoice-group">
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">公司注册地址：</span>
+                                            <span class="invoice-itemval">广州越秀</span>
+                                        </div>
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">公司电话：</span>
+                                            <span class="invoice-itemval">110120119</span>
+                                        </div>
+                                    </li>
+                                    <li class="invoice-group">
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">开户银行：</span>
+                                            <span class="invoice-itemval">中国工商银行</span>
+                                        </div>
+                                        <div class="invoice-item lt">
+                                            <span class="invoice-label">银行帐号：</span>
+                                            <span class="invoice-itemval">110120119</span>
+                                        </div>
+                                    </li>
+                                    <li class="invoice-group">
+                                        <div class="invoice-item lt" style="width: 70%;">
+                                            <span class="invoice-label">邮寄地址：</span>
+                                            <span class="invoice-itemval">广东省 广州市 越秀区东风东路1号东峻广场1座2604室</span>
+                                        </div>
+                                        <button class="changeInvoiceBtn rt">修改发票信息</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- 快递信息 -->
                     <div class="express">
-                        <div class="express-title-bg"></div>
-                        <div class="container">
+                        <div class="express-panel">
                             <h3 class="express-title">发票快递信息</h3>
-                            <table class="express-table" cellspacing="0" cellpadding="0">
-                                <thead>
-                                    <tr class="thead">
-                                        <th>快递日期</th>
-                                        <th>快递公司</th>
-                                        <th>快递单号</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="white-divide" colspan="3"></td>
-                                    </tr>
-                                    <tr class="hasborder">
-                                        <td>2018-02-02</td>
-                                        <td>顺丰快递</td>
-                                        <td>123456789</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="express-attention">注：发票一般在收款后7个工作日内寄出，一张订单对应一张发票。</p>
-                            <p class="contact">有问题，请联系我们：020-28829750</p>
+                            <div class="express-panel-body">
+                                <ul class="express-list">
+                                    <li class="express-item">
+                                        <span class="express-label">快递日期：</span>
+                                        <span class="express-itemval">2018-02-02</span>
+                                    </li>
+                                    <li class="express-item">
+                                        <span class="express-label">快递公司：</span>
+                                        <span class="express-itemval">顺丰快递</span>
+                                    </li>
+                                    <li class="express-item">
+                                        <span class="express-label">快递单号：</span>
+                                        <span class="express-itemval">123456789</span>
+                                    </li>
+                                </ul>
+                                <p class="express-attention">注：发票一般在收款后7个工作日内寄出，一张订单对应一张发票。</p>
+                                <p class="contact">有问题，请联系我们：020-28829750</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -318,5 +353,8 @@
             <button class="submitChange">确认修改</button>
         </div>
     </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/invoice.js"></script>
 </body>
 </html>

@@ -1,6 +1,9 @@
-input:disabled {
+input:disabled, select:disabled {
     background-color: #DDDDDD;
     cursor: not-allowed;
+}
+input:focus, select:focus {
+    border: 1px solid #565656;
 }
 /********** 发票内容 **********/
 .invoice-wrapper {
@@ -18,10 +21,7 @@ input:disabled {
     margin-bottom: 20px;
 }
 .invoice-title-box > .container,
-.invoice-info > .container,
-.add-invoice > .container,
-.invoice-content > .container,
-.express > .container {
+.invoice-info > .container {
     width: 97%;
 }
 .invoice-info {
@@ -29,8 +29,8 @@ input:disabled {
     /* display: none; */
 }
 .invoice-desc {
-    height: 65px;
-    line-height: 65px;
+    height: 40px;
+    line-height: 40px;
 }
 
 /********** 添加发票信息 **********/
@@ -39,16 +39,19 @@ input:disabled {
     /* display: none; */
 }
 .invoice-title-bg {
+    width: 97%;
     height: 40px;
-    background-color: #DEDEDE;
+    background-color: #EEEEEE;
+    margin: 0 auto;
 }
 .add-invoice > .container {
+    width: 95%;
     margin-top: -40px;
 }
 .invoice-caption {
     height: 40px;
     line-height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .add-invoice-form {
     width: 95%;
@@ -87,7 +90,7 @@ input:disabled {
     color: #fff;
     text-align: center;
     line-height: 40px;
-    margin: 30px auto;
+    margin: 30px auto 50px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -95,6 +98,23 @@ input:disabled {
 /********** 有发票的情况 **********/
 .invoice-content {
     background-color: #fff;
+    padding-bottom: 50px;
+}
+.invoice-panel {
+    width: 97%;
+    margin: 0 auto;
+    border: 1px solid #EEEEEE;
+    border-top: 0;
+}
+.invoice-panel-title {
+    height: 40px;
+    background-color: #EEEEEE;
+    padding: 0 1%;
+    line-height: 40px;
+}
+.invoice-panel-body {
+    width: 97%;
+    margin: 0 auto;
 }
 .invoice-group {
     overflow: hidden;
@@ -116,13 +136,17 @@ input:disabled {
 .invoice-label {
     width: 120px;
     text-align: right;
+    color: #565656;
+}
+.invoice-itemval {
+    color: #181818;
 }
 .changeInvoiceBtn {
-    height: 40px;
-    line-height: 40px;
-    margin-right: 120px;
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 50px;
     cursor: pointer;
-    padding: 0 40px;
     font-size: 16px;
     background-color: #113689;
     color: #fff;
@@ -134,47 +158,49 @@ input:disabled {
     padding-bottom: 50px;
     background-color: #fff;
 }
-.express-title-bg {
-    height: 40px;
-    background-color: #DEDEDE;
-}
-.express > .container {
-    margin-top: -40px;
+.express-panel {
+    width: 97%;
+    margin: 0 auto;
+    border: 1px solid #EEEEEE;
+    border-top: 0;
 }
 .express-title {
     height: 40px;
+    background-color: #EEEEEE;
+    padding: 0 1%;
     line-height: 40px;
+}
+.express-panel-body {
+    width: 97%;
+    margin: 0 auto;
+}
+.express-list {
+    margin: 25px 0;
+    font-size: 16px;
+}
+.express-item:not(:last-child) {
     margin-bottom: 15px;
 }
-.express-table {
-    width: 99.8%;
-    font-size: 16px;
-    text-align: center;
-    border-collapse: collapse;
+.express-label, .express-itemval {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 40px;
 }
-.thead {
-    height: 40px;
-}
-.white-divide {
-    height: 15px;
-    background-color: #fff;
-}
-.hasborder, .hasborder > td {
-    border: 1px solid #DEDEDE;
-}
-td {
-    height: 45px;
+.express-label {
+    width: 120px;
+    text-align: right;
 }
 .express-attention {
     height: 20px;
     line-height: 20px;
-    text-align: right;
     color: #E54144;
-    margin-top: 10px;
+    margin: 10px 0 30px;
+    text-indent: 40px;
 }
 .contact {
     text-align: right;
     margin-top: 10px;
+    display: none;
 }
 
 /********** 修改发票 **********/
