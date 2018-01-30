@@ -9,8 +9,9 @@
     overflow: hidden;
 }
 .welcome-text {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
+    font-weight: normal;
 }
 #more-activity {
     width: 180px;
@@ -24,7 +25,7 @@
     height: 50px;
     line-height: 50px;
     font-size: 16px;
-    background-color: #DDDDDD;
+    background-color: #EEEEEE;
 }
 .classify-infobox > .container,
 .activity-item > .container {
@@ -97,8 +98,22 @@
     margin: 7px 40px 0 0;
 }
 .hasbuyed .ticket-status-text {
+    position: relative;
     color: #181818;
     cursor: pointer;
+}
+.hasbuyed .ticket-status-text::after {
+    position: absolute;
+    top: 5px;
+    content: "";
+    color: #113689;
+    margin-left: 5px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #113689;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(45deg);
 }
 .buy-ticket {
     box-sizing: border-box;
@@ -106,6 +121,6 @@
     height: 35px;
     text-align: center;
     line-height: 33px;
-    border: 1px solid #113689;
-    color: #113689;
+    color: #fff;
+    background-color: #113689;
 }

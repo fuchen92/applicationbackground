@@ -59,7 +59,7 @@ $(document).ready(function () {
             //     }
             // });
 
-            $(this).text(num + "s");
+            $(this).text(num + "s").prop("disabled", true);
             timer = setInterval(function () {
                 countdown();
             }, 1000);

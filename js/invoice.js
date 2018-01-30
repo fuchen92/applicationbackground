@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    var addInvoice = $("#addInvoice"),              // 添加发票信息的整体容器
+        invoicePanel = $("#invoicePanel");          // 发票信息面板
+
+
     var invoiceForm = $("#invoiceForm"),            // 发票表单容器
         invoiceType = $("#invoiceType"),            // 发票类型
         invoiceContent = $("#invoiceContent"),      // 发票内容
@@ -6,7 +10,8 @@ $(document).ready(function () {
         city = $("#city"),                          // 城市
         postCode = $("#postCode");                  // 邮政编码
 
-    var submitInvoice = $("#submitInvoice");
+    var submitInvoice = $("#submitInvoice"),
+        changeInvoiceBtn = $("#changeInvoiceBtn");
 
 
     var allInputs = invoiceForm.find(":input"),
@@ -14,34 +19,36 @@ $(document).ready(function () {
         selects = invoiceForm.find("select:not(#invoiceType)");
         canDisableInputs = invoiceForm.find(".candisable");
 
-    var isNeedInvoice = true;                       // 是否需要发票
+    var isNeedInvoice = true,                       // 是否需要发票
+        isChange = false;                           // 是在第一次填写的状态还是在修改的状态
 
     var invoiceTable = $("#invoiceTable"),
         invoiceVals = invoiceTable.find(".invoice-itemval");
 
+    console.log(allInputs)
     console.log(invoiceVals)
     // 不需要发票
     invoiceType.change(function () {
         var currVal = $(this).val();
         switch (currVal) {
-            case "1":
+            case "0":
                 isNeedInvoice = false;
                 inputs.val("").prop("disabled", true);
                 selects.val(0).prop("disabled", true);
                 submitInvoice.prop("disabled", true);
                 break;
-            case "2":
+            case "1":
                 isNeedInvoice = true;
-                inputs.val("").prop("disabled", false);
-                selects.val(0).prop("disabled", false);
-                canDisableInputs.prop("disabled", true);
+                isChange ? inputs.prop("disabled", false) : inputs.val("").prop("disabled", false);
+                isChange ? selects.prop("disabled", false) : selects.val(0).prop("disabled", false);
+                canDisableInputs.prop("disabled", true).css("display", "none").closest(".form-group").addClass("hide");
                 submitInvoice.prop("disabled", false);
                 break;
-            case "3":
+            case "2":
                 isNeedInvoice = true;
-                allInputs.prop("disabled", false);
-                inputs.val("");
-                selects.val(0);
+                allInputs.prop("disabled", false).removeAttr("style").closest(".form-group").removeClass("hide");
+                isChange ? null : inputs.val("");
+                isChange ? null : selects.val(0);
                 submitInvoice.prop("disabled", false);
                 break;
         }
@@ -154,8 +161,15 @@ $(document).ready(function () {
             bankAccount: $.trim(allInputs.eq(7).val()),
             province: $("#province").val(),
             city: $("#city").val(),
+            street: $.trim(allInputs.eq(10).val()),
             postCode: $("#postCode").val()
         }
+        invoiceTable.attr("data-invoicetype", $("#invoiceType").val());
+        invoiceTable.attr("data-invoicecontent", $("#invoiceContent").val());
+        invoiceTable.attr("data-province", $("#province").val());
+        invoiceTable.attr("data-city", $("#city").val());
+        invoiceTable.attr("data-street", $.trim(allInputs.eq(10).val()));
+        invoiceTable.attr("data-postcode", $.trim(allInputs.eq(11).val()));
         // $.ajax({
         //     url: "OrderCreate",
         //     type: "POST",
@@ -174,8 +188,55 @@ $(document).ready(function () {
         //         console.log(error)
         //     }
         // });
+
         inputs.val("");
         selects.val(0);
+        addInvoice.css("display", "none");
+        invoicePanel.removeAttr("style");
         console.log("提交成功啦")
+    });
+
+    // 修改发票信息
+    changeInvoiceBtn.on("click", function () {
+         
+        var invoiceType = invoiceTable.attr("data-invoicetype"),
+            invoiceContent = invoiceTable.attr("data-invoicecontent"),
+            invoiceProvince = invoiceTable.attr("data-province"),
+            invoiceCity = invoiceTable.attr("data-city"),
+            invoiceStreet = invoiceTable.attr("data-street"),
+            postCode = invoiceTable.attr("data-postcode");
+
+        var invoiceInfo = [];
+
+        isChange = true;
+
+        submitInvoice.text("确认修改");
+
+        invoiceVals.each(function (index, item) {
+            var _this = $(item);
+            if (index < 8) {
+                invoiceInfo.push($.trim(_this.text()));
+            }            
+        });
+        invoiceInfo.push(invoiceProvince, invoiceCity, invoiceStreet, postCode);
+
+        for (var i = 0; i < invoiceInfo.length; i++) {
+            if (i == 0 || i == 1 || i == 8 || i == 9) continue;
+            if (invoiceInfo[i] == "无") {
+                allInputs.eq(i).val("");
+            } else {
+                allInputs.eq(i).val(invoiceInfo[i])
+            }
+        }   
+        
+        $("#invoiceType option[value=" + invoiceType + "]").prop("selected", true);
+        $("#invoiceContent option[value=" + invoiceContent + "]").prop("selected", true);
+        $("#province option[value=" + invoiceProvince + "]").prop("selected", true);
+        $("#city option[value=" + invoiceCity + "]").prop("selected", true);
+        $("#street").val(invoiceStreet);
+        $("#postCode").val(postCode);
+        addInvoice.removeAttr("style");
+        invoicePanel.css("display", "none");
+        console.log("1111")
     });
 });

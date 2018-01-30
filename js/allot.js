@@ -151,7 +151,7 @@ $(document).ready(function () {
         $(".already-allot").eq(1).text(alreadyAllotCount);
         noAllotCount - allotUsers.length < 0 && $("#noallotWrapper").remove();
         console.log(noAllotCount)
-        alert("提交成功啦")
+        // alert("提交成功啦")
         noAllotContainer.find(":input[type=text]").val("");
         noAllotContainer.find("select").val(0);
     });
@@ -360,7 +360,7 @@ $(document).ready(function () {
 
         $(".changeAllot-close").trigger("click");
 
-        alert("修改成功啦")
+        // alert("修改成功啦")
         
     });
 });

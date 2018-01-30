@@ -14,7 +14,7 @@
     <nav>
         <div class="container">
             <div class="logo lt">
-                <a href="index.html">
+                <a href="order.html">
                     <img class="logo-img" src="css/img/logo.png" />
                 </a>
             </div>
@@ -52,7 +52,7 @@
                 <div class="siderbar-menu lt">
                     <a class="siderbar-menuitem" href="order.html">我的订单</a>
                     <a class="siderbar-menuitem" href="attendsManage.html">参会人员信息管理</a>
-                    <a class="siderbar-menuitem active" href="invoice.html">我的发票</a>
+                    <a class="siderbar-menuitem active" href="invoice.html">发票管理</a>
                 </div>
                 <div class="invoice-detail rt">
                     <div class="invoice-title-box">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <!-- 没有发票信息的情况 -->
-                    <div class="add-invoice">
+                    <div id="addInvoice" class="add-invoice">
                         <div class="invoice-title-bg"></div>
                         <div class="container">
                             <h3 class="invoice-caption">发票信息</h3>
@@ -75,9 +75,9 @@
                                     <div class="form-item lt">
                                         <select id="invoiceType" class="invoice-select" data-role='[{ "name": "发票类型" }]'>
                                             <!-- <option value="0">发票类型</option> -->
-                                            <option value="2">普通发票</option>
-                                            <option value="3">专用发票</option>
-                                            <option value="1">不需要发票</option>
+                                            <option value="1">普通发票</option>
+                                            <option value="2">专用发票</option>
+                                            <option value="0">不需要发票</option>
                                         </select>
                                         <p class="form-tips">请选择发票类型</p>
                                     </div>
@@ -101,7 +101,7 @@
                                         <p class="form-tips">请填写纳税人识别号</p>
                                     </div>
                                 </li>
-                                <li class="form-group">
+                                <li class="form-group hide">
                                     <div class="form-item lt">
                                         <input class="invoice-input candisable" type="text" placeholder="公司注册地址" disabled="disabled" data-role='[{ "name": "公司注册地址" }]'>
                                         <p class="form-tips">请填写公司注册地址</p>
@@ -111,7 +111,7 @@
                                         <p class="form-tips">请填写公司电话</p>
                                     </div>
                                 </li>
-                                <li class="form-group">
+                                <li class="form-group hide">
                                     <div class="form-item lt">
                                         <input class="invoice-input candisable" type="text" placeholder="开户银行" disabled="disabled" data-role='[{ "name": "开户银行" }]'>
                                         <p class="form-tips">请填写开户银行</p>
@@ -172,7 +172,7 @@
                                 </li>
                                 <li class="form-group">
                                     <div class="form-item lt">
-                                        <input class="invoice-input" type="text" placeholder="详细地址" data-role='[{ "name": "详细地址" }]'>
+                                        <input id="street" class="invoice-input" type="text" placeholder="详细地址" data-role='[{ "name": "详细地址" }]'>
                                         <p class="form-tips">请填写详细地址</p>
                                     </div>
                                     <div class="form-item rt">
@@ -185,15 +185,15 @@
                         </div>
                     </div>
                     <!-- 有发票信息的情况 -->
-                    <div class="invoice-content">
+                    <div id="invoicePanel" class="invoice-content" style="display: none;">
                         <div class="invoice-panel">
                             <h3 class="invoice-panel-title">发票信息</h3>
                             <div class="invoice-panel-body">
-                                <ul id="invoiceTable" class="invoice-table">
+                                <ul id="invoiceTable" class="invoice-table" data-invoicetype="1" data-invoicecontent="1" data-province="19" data-city="3" data-street="越秀区东峻广场1座2604" data-postcode="510000">
                                     <li class="invoice-group">
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">发票类别：</span>
-                                            <span class="invoice-itemval">专用发票</span>
+                                            <span class="invoice-itemval">普通发票</span>
                                         </div>
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">发票内容：</span>
@@ -203,7 +203,7 @@
                                     <li class="invoice-group">
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">发票抬头：</span>
-                                            <span class="invoice-itemval">中华人民共和国</span>
+                                            <span class="invoice-itemval">广州旅聘网络科技有限公司</span>
                                         </div>
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">纳税人识别号：</span>
@@ -213,21 +213,21 @@
                                     <li class="invoice-group">
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">公司注册地址：</span>
-                                            <span class="invoice-itemval">广州越秀</span>
+                                            <span class="invoice-itemval">无</span>
                                         </div>
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">公司电话：</span>
-                                            <span class="invoice-itemval">110120119</span>
+                                            <span class="invoice-itemval">无</span>
                                         </div>
                                     </li>
                                     <li class="invoice-group">
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">开户银行：</span>
-                                            <span class="invoice-itemval">中国工商银行</span>
+                                            <span class="invoice-itemval">无</span>
                                         </div>
                                         <div class="invoice-item lt">
                                             <span class="invoice-label">银行帐号：</span>
-                                            <span class="invoice-itemval">110120119</span>
+                                            <span class="invoice-itemval">无</span>
                                         </div>
                                     </li>
                                     <li class="invoice-group">
@@ -235,7 +235,7 @@
                                             <span class="invoice-label">邮寄地址：</span>
                                             <span class="invoice-itemval">广东省 广州市 越秀区东风东路1号东峻广场1座2604室</span>
                                         </div>
-                                        <button class="changeInvoiceBtn rt">修改发票信息</button>
+                                        <button id="changeInvoiceBtn" class="changeInvoiceBtn rt">修改发票信息</button>
                                     </li>
                                 </ul>
                             </div>
@@ -351,6 +351,21 @@
                 </li>
             </ul>
             <button class="submitChange">确认修改</button>
+        </div>
+    </div>
+    <!-- 固定右侧联系信息 -->
+    <div class="fixedcontact">
+        <img class="contact-icon" src="" />
+        <p class="contact-tips">有问题？<br>联系我们</p>
+        <div class="contact-box">
+            <div class="contact-item">
+                <p class="contact-label">联系电话</p>
+                <p class="contact-desc contact-tel">020-28829750</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-label">服务时间</p>
+                <p class="contact-desc">工作日 9：30-18：00</p>
+            </div>
         </div>
     </div>
 

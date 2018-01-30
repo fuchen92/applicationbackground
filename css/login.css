@@ -60,6 +60,10 @@ input, button {
 input:disabled, button:disabled {
     cursor: not-allowed;
 }
+button:disabled:hover {
+    background-color: #fff !important;
+    color: #181818;    
+}
 /********** 登录容器 **********/
 .wrapper {
     position: absolute;
@@ -104,6 +108,10 @@ input:disabled, button:disabled {
     background-color: #fff;
     color: #181818;
     cursor: pointer;
+}
+.getValicode:hover {
+    background-color: #113689;
+    color: #fff;
 }
 .autologin {
     display: block;

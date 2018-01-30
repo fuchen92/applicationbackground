@@ -131,6 +131,7 @@ nav {
     width: 95%;
 }
 .activity-title {
+    font-weight: normal;
     font-size: 24px;
     line-height: 30px;
     margin-right: 30px;
@@ -185,7 +186,64 @@ nav {
     border-radius: 5px;
 }
 
-
+/********** 公共固定右侧联系方式 **********/
+.fixedcontact {
+    position: fixed;
+    bottom: 150px;
+    right: 0;
+    width: 90px;
+    height: 115px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.contact-icon {
+    box-sizing: border-box;
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 10px auto;
+    border: 1px solid #282C34;
+}
+.contact-tips {
+    text-align: center;
+    color: #181818;
+    font-size: 16px;
+}
+.contact-box {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 110px;
+    width: 190px;
+    height: 135px;
+    padding: 15px;
+    background-color: #fff;
+    display: none;    
+}
+.contact-box::after {
+    position: absolute;
+    content: "";
+    border: 10px solid transparent;
+    border-left-color: #fff;
+    border-left-width: 15px;
+    top: 55px;
+    right: -25px;
+}
+.contact-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+.contact-desc {
+    font-size: 16px;
+}
+.contact-tel {
+    color: #1E66AC;
+}
+.contact-label, .contact-desc {
+    line-height: 20px;
+}
+.fixedcontact:hover .contact-box {
+    display: block;
+}
 
 /* input[type=text], textarea, select {
     box-sizing: border-box;

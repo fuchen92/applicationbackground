@@ -54,6 +54,8 @@
     background-color: #fff;
 }
 .graybg {
+    width: 97%;
+    margin: 0 auto;
     height: 50px;
     background-color: #DEDEDE;
 }
@@ -125,7 +127,7 @@
     text-decoration: none;
 }
 .allot-tips {
-    font-size: 12px;
+    /* font-size: 12px; */
 }
 .nopay-tips {
     position: relative;
@@ -207,7 +209,7 @@
     color: #fff;
     border-radius: 2px;
 }
-.contact {
+/* .contact {
     text-align: right;
 }
 .contact-desc, .our-tel {
@@ -218,4 +220,4 @@
 }
 .our-tel {
     color: #113689;
-}
+} */
