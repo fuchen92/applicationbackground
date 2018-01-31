@@ -129,7 +129,6 @@ $(document).ready(function () {
         $("#personalInfo .cancelBtn").removeAttr("style");
         $("#personalInfo .changeBtn").css("display", "inline-block");
         layer.closeAll();
-        alert("提交成功");
         $(this).prop("disabled", true);
     });
 
@@ -269,7 +268,6 @@ $(document).ready(function () {
                     clearInterval(timer);
                     getValicodeBtn.prop("disabled", false).text("发送手机验证码");
                     layer.closeAll();
-                    alert("提交成功")
                     break;
                 case "submitEmail":
                     if (emailInput.val() == "" || emailInput.val().length == 0) {
@@ -293,7 +291,6 @@ $(document).ready(function () {
                     changeEmailEle.text(emailInput.val());
                     emailInput.val("");
                     layer.closeAll();
-                    alert("提交成功");
                     break;
             }
             changeColumn.removeClass("changeActive");

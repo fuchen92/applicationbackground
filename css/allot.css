@@ -43,9 +43,9 @@ input:focus, select:focus {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 17px;
-    height: 17px;
-    line-height: 17px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
     background-color: #CFD7E7;
     font-size: 12px;
     border-radius: 50%;

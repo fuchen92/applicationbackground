@@ -62,12 +62,12 @@
                     </div>
                     <div class="classify-order">
                         <div class="container">
-                            <span class="classify-ordermenu allorder active">所有订单</span>
+                            <span class="classify-ordermenu allorder">所有订单</span>
                             <span class="classify-ordermenu already-pay">已付款</span>
                         </div>
                     </div>
                     <!-- 所有订单列表 -->
-                    <div class="order-list active">
+                    <div class="order-list">
                         <div class="graybg"></div>
                         <div class="container">
                             <table id="orderTable" class="order-table" cellspacing="0" cellpadding="0">
@@ -614,10 +614,23 @@
 
             var whichChange = null;
 
-            $(".classify-ordermenu").on("click", function () {
+            var urlAlreadypay = location.search.substr(1).indexOf("alreadypay");
+
+            var classifyMenu = $(".classify-ordermenu"),
+                orderLists = $(".order-list");
+
+            classifyMenu.eq(0).addClass("active");
+            orderLists.eq(0).addClass("active");
+
+            if (urlAlreadypay != -1) {
+                classifyMenu.eq(0).removeClass("active").end().eq(1).addClass("active");
+                orderLists.eq(0).removeClass("active").end().eq(1).addClass("active");
+            }
+
+            classifyMenu.on("click", function () {
                 var index = $(this).index();
                 $(this).addClass("active").siblings().removeClass("active");
-                $(".order-list").eq(index).addClass("active").siblings().removeClass("active");
+                orderLists.eq(index).addClass("active").siblings().removeClass("active");
             });
 
             $("#orderTable .cancel-order").on("click", function () {
