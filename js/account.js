@@ -13,6 +13,7 @@ $(document).ready(function () {
         
     });
     $(".cancelBtn").on("click", function () {
+        layer.closeAll();
         switchStatus($(this));
         if ($("#personalInfo .column-second.changeActive").length == 0) {
             $("#submitChange").prop("disabled", true);
@@ -36,9 +37,16 @@ $(document).ready(function () {
     }
 
     // 修改个人信息
+    var hasTip = false;
     $("#submitChange").on("click", function () {
         var catchErr = false,
             changeColumns = $("#personalInfo .column-second");
+
+        var tipOption = {
+            tips: [1, "#2B81E2"],
+            time: 1500,
+            end: function () { hasTip = false; }
+        }
 
         changeColumns.each(function () {
             var inputEle = $(this).children("input");
@@ -49,7 +57,10 @@ $(document).ready(function () {
                     var role = eval(attr);
                     if (role && role.length > 0) {
                         if (inputEle.val() == "" || inputEle.val().length == 0) {
-                            alert("请填写" + role[0].name)
+                            if (hasTip == false) {
+                                layer.tips("请填写" + role[0].name, inputEle, tipOption);
+                                hasTip = true;
+                            }
                             catchErr = true;
                             inputEle.focus();
                             return false;
@@ -117,6 +128,7 @@ $(document).ready(function () {
         $("#personalInfo .info-column").removeClass("changeActive");
         $("#personalInfo .cancelBtn").removeAttr("style");
         $("#personalInfo .changeBtn").css("display", "inline-block");
+        layer.closeAll();
         alert("提交成功");
         $(this).prop("disabled", true);
     });
@@ -145,15 +157,27 @@ $(document).ready(function () {
     }
     // 获取手机验证码
     getValicodeBtn.on("click", function () {
+        var tipOption = {
+            tips: [1, "#2B81E2"],
+            time: 1500,
+            end: function () { hasTip = false; }
+        }
+
         if ($(this).prop("disabled")) {
             return;
         }
         if (mobileInput.val() == "") {
-            alert("请填写新的手机号码");
+            if (hasTip == false) {
+                layer.tips("请填写新的手机号码", mobileInput, tipOption);
+                hasTip = true;
+            }
             mobileInput.focus();
             return false;
         } else if (!/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/.test(mobileInput.val())) {
-            alert("手机号码格式不对，请检查");
+            if (hasTip == false) {
+                layer.tips("手机号码格式不对，请检查", mobileInput, tipOption);
+                hasTip = true;
+            }
             mobileInput.focus();
             return false;
         } else {
@@ -178,7 +202,7 @@ $(document).ready(function () {
             //         }
             //     }
             // });
-
+            layer.closeAll();
             $(this).text(num + "s").prop("disabled", true);
             timer = setInterval(function () {
                 countdown();
@@ -195,26 +219,41 @@ $(document).ready(function () {
             changeColumn = btnEle.closest(".info-group").children(".column-second, .column-third"),
             changeMobileEle = mobileInput.prev(".info-name"),
             changeEmailEle = emailInput.prev(".info-name");
+
+        var tipOption = {
+            tips: [1, "#2B81E2"],
+            time: 1500,
+            end: function () { hasTip = false; }
+        }
         
         if (changeColumn.hasClass("changeActive")) {
             switch (btn.id) {
                 case "submitMobile":
                     if (mobileInput.val() == "" || mobileInput.length == 0) {
-                        alert("请填写新的手机号码")
+                        if (hasTip == false) {
+                            layer.tips("请填写新的手机号码", mobileInput, tipOption);
+                            hasTip = true;
+                        }
                         mobileInput.focus();
                         return false;
         
                     } else if (!/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/.test(mobileInput.val())) {
-                        alert("手机号码格式不正确，请检查");
+                        if (hasTip == false) {
+                            layer.tips("手机号码格式不正确，请检查", mobileInput, tipOption);
+                            hasTip = true;
+                        }
                         mobileInput.focus();
                         return false;
                     }
                     if (valicode.val() == "" || valicode.val().length == 0) {
-                        alert("请填写验证码")
+                        layer.tips("请填写验证码", valicode, tipOption);
                         valicode.focus();
                         return false;
                     } else if ( !/^\d{6}$/.test( $.trim(valicode.val()) ) ) {
-                        alert("验证码是6位数字哦。")
+                        if (hasTip == false) {
+                            layer.tips("验证码是6位数字哦。", valicode, tipOption);
+                            hasTip = true;
+                        }
                         valicode.focus();
                         return false;
                     }
@@ -229,15 +268,22 @@ $(document).ready(function () {
                     num = 59;
                     clearInterval(timer);
                     getValicodeBtn.prop("disabled", false).text("发送手机验证码");
+                    layer.closeAll();
                     alert("提交成功")
                     break;
                 case "submitEmail":
                     if (emailInput.val() == "" || emailInput.val().length == 0) {
-                        alert("请填写邮箱")
+                        if (hasTip == false) {
+                            layer.tips("请填写邮箱", emailInput, tipOption);
+                            hasTip = true;
+                        }
                         emailInput.focus();
                         return false;
                     } else if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(emailInput.val())) {
-                        alert("邮箱格式不正确，请检查");
+                        if (hasTip == false) {
+                            layer.tips("邮箱格式不正确，请检查", emailInput, tipOption);
+                            hasTip = true;
+                        }
                         emailInput.focus();
                         return false;
                     }
@@ -246,6 +292,7 @@ $(document).ready(function () {
                     }
                     changeEmailEle.text(emailInput.val());
                     emailInput.val("");
+                    layer.closeAll();
                     alert("提交成功");
                     break;
             }

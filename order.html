@@ -576,6 +576,19 @@
             </div>
         </div>
     </div>
+    <!-- 浮窗验证提示信息对话框 -->
+    <div id="fixedDialog" class="fixedDialog">
+        <div class="fixedDialog-bg"></div>
+        <div class="fixedDialog-wrapper">
+            <div id="closeFixedDialog" class="closeFixedDialog">×</div>
+            <h3 class="fixedDialog-title">取消订单</h3>
+            <p class="fixedDialog-desc">您确定要取消订单吗？</p>
+            <div class="fixedBtns">
+                <button id="cancelBtn" type="button" class="cancelBtn">取消</button>
+                <button id="confirmBtn" type="button" class="confirmBtn">确定</button>
+            </div>
+        </div>
+    </div>
     <!-- 固定右侧联系信息 -->
     <div class="fixedcontact">
         <img class="contact-icon" src="" />
@@ -593,8 +606,14 @@
     </div>
 
     <script src="http://img.traveldaily.cn/script/jquery.js"></script>
-    <script>
+    <script>        
         $(document).ready(function () {
+
+            var dialog = $("#fixedDialog"),
+                closeDialog = $("#closeFixedDialog");
+
+            var whichChange = null;
+
             $(".classify-ordermenu").on("click", function () {
                 var index = $(this).index();
                 $(this).addClass("active").siblings().removeClass("active");
@@ -602,9 +621,43 @@
             });
 
             $("#orderTable .cancel-order").on("click", function () {
-                var r = window.confirm("您确定要取消订单吗？")
-                if (r) {
-                    $(this).parent("td").empty().append("<span class='already-cancel'>已取消</span>");
+                whichChange = $(this);
+                dialog.css("display", "block");
+                console.log(whichChange)
+            });
+            closeDialog.on("click", function () {
+                dialog.removeAttr("style");
+            });
+
+            dialog.on("click", "button", function () {
+                var btn = $(this);
+                switch (btn.get(0).id) {
+                    case "cancelBtn":
+                        dialog.removeAttr("style");
+                        break;
+                    case "confirmBtn":
+                        // 请求后台告知订单取消状态
+                        // $.ajax({
+                        //     url: "OrderCreate",
+                        //     type: "POST",
+                        //     dataType: "json",
+                        //     contentType: "application/json; charset=utf-8",
+                        //     data: JSON.stringify({ "order": order }),
+                        //     cache: false,
+                        //     success: function (js) {
+                        //         if (js.Code == 0) {
+                        //             alert("取消成功啦")
+                        //         } else {
+                        //             alert("提交失败，请稍后再试")
+                        //         }
+                        //     },
+                        //     error: function (error) {
+                        //         console.log(error)
+                        //     }
+                        // });
+                        whichChange.parent("td").empty().append("<span class='already-cancel'>已取消</span>");
+                        dialog.removeAttr("style");
+                        break;
                 }
             });
         });
