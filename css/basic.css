@@ -154,8 +154,8 @@ nav {
 }
 .more-activity {
     box-sizing: border-box;
-    padding: 0 2px 0 25px;
-    font-size: 16px;
+    padding: 0 5px 0 30px;
+    font-size: 14px;
     height: 30px;
     line-height: 30px;
     border: 1px solid #D3D3D3;
@@ -180,6 +180,7 @@ nav {
     line-height: 45px;
     font-size: 16px;
     color: #181818;
+    margin: 10px 0;
 }
 .siderbar-menuitem.active {
     background-color: #1D3485;
