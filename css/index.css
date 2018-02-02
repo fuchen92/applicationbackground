@@ -54,7 +54,6 @@
     box-sizing: border-box;
     width: 105px;
     height: 105px;
-    border: 1px solid #cccccc;
     margin: 25px 15px 0 0;
     border-radius: 50%;
 }
