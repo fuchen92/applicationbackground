@@ -57,14 +57,14 @@
     width: 97%;
     margin: 0 auto;
     height: 50px;
-    background-color: #DEDEDE;
+    background-color: #EEEEEE;
 }
 .order-list > .container {
     margin-top: -50px;
 }
 .order-table, .inner-table {
     width: 99.8%;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -99,7 +99,7 @@
 }
 .paystatus {
     font-size: 14px;
-    color: #FA6321;
+    color: #E54144;
 }
 .cancel-order {
     height: 30px;
@@ -116,8 +116,10 @@
     height: 60px;
 }
 .allot-link {
+    line-height: 20px;
     color: #1E66AC;
     text-decoration: underline;
+    margin-top: 3px;
 }
     /* 未支付情况 */
 .nopay {
@@ -152,7 +154,7 @@
     font-size: 12px;
     padding: 0 5px;
     border-radius: 2px;
-    background-color: #CFD7E7;
+    background-color: #EEEEEE;
     color: #181818;
     display: none;
 }
@@ -162,7 +164,7 @@
 .nopaytip-text::after {
     position: absolute;
     content: "";
-    border: 8px solid #CFD7E7;
+    border: 8px solid #EEEEEE;
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;

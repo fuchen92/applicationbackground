@@ -44,14 +44,14 @@ input:focus, select:focus {
     width: 97%;
     height: 40px;
     margin: 0 auto;
-    background-color: #DEDEDE;
+    background-color: #EEEEEE;
 }
 .allot-list > .container {
     margin-top: -40px;
 }
 .allot-table {
     width: 99.8%;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     border-collapse: collapse;
     margin-bottom: 30px;
@@ -115,8 +115,8 @@ tr td.companyCN, tr td.mobile, tr td.email {
 
 .allot-tips {
     box-sizing: border-box;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     padding: 0 15px;
     border: 1px solid #DEDEDE;
     margin-bottom: 40px;
