@@ -133,7 +133,7 @@ input:focus, select:focus {
     width: 70px;
     height: 30px;
     line-height: 30px;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     text-align: center;
     border-radius: 2px;
@@ -149,7 +149,7 @@ input:focus, select:focus {
     color: #858585;
     margin: 20px 0 30px;
     padding-left: 30px;
-    background: url(img/question.png) left center no-repeat;
+    background: url(img/tips.png) left center no-repeat;
 }
 .addallot-form {
     width: 95%;
@@ -199,7 +199,7 @@ input:focus, select:focus {
     line-height: 40px;
     border-radius: 2px;
     cursor: pointer;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
 }
 .submit-allot {
@@ -208,8 +208,8 @@ input:focus, select:focus {
 }
 .add-another {
     background-color: #fff;
-    border: 1px solid #113689;
-    color: #113689;
+    border: 1px solid #1767EC;
+    color: #1767EC;
 }
 
 /********** 修改分配信息对话框 **********/
@@ -262,7 +262,7 @@ input:focus, select:focus {
     display: block;
     width: 180px;
     height: 40px;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     text-align: center;
     line-height: 40px;

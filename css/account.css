@@ -35,8 +35,8 @@
     cursor: pointer;
 }
 .infomenu-item.active {
-    border-bottom: 2px solid #113689;
-    color: #113689;
+    border-bottom: 2px solid #1767EC;
+    color: #1767EC;
 }
 .account-info {
     margin-top: 25px;
@@ -104,7 +104,7 @@
     font-size: 14px;
     text-align: center;
     background-color: #fff;
-    color: #1E66AC;
+    color: #1767EC;
     cursor: pointer;
     display: none;
 }
@@ -115,7 +115,7 @@
     line-height: 40px;
     font-size: 16px;
     text-align: center;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     margin: 40px 0 40px 110px;
     cursor: pointer;
@@ -130,7 +130,7 @@
 /********** 安全信息 **********/
 .submitBtn {
     display: none;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
 }
 .changeActive.column-third .column-desc {
@@ -144,12 +144,12 @@
 }
 .column-third .getValicode {
     width: 110px;
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     padding: 0;
-    margin: 5px 10px 0 0;
-    background-color: #113689;
+    margin: 0px 10px 0 0;
+    background-color: #1767EC;
     color: #fff;
     cursor: pointer;
 }

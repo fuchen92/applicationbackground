@@ -14,6 +14,8 @@ $(document).ready(function () {
     });
     $(".cancelBtn").on("click", function () {
         layer.closeAll();
+        clearInterval(timer);
+        getValicodeBtn.prop("disabled", false).text("发送手机验证码");
         switchStatus($(this));
         if ($("#personalInfo .column-second.changeActive").length == 0) {
             $("#submitChange").prop("disabled", true);
@@ -36,14 +38,14 @@ $(document).ready(function () {
         }
     }
 
-    // 修改个人信息
+    // 修改联系人信息
     var hasTip = false;
     $("#submitChange").on("click", function () {
         var catchErr = false,
             changeColumns = $("#personalInfo .column-second");
 
         var tipOption = {
-            tips: [1, "#2B81E2"],
+            tips: [1, "#1767EC"],
             time: 1500,
             end: function () { hasTip = false; }
         }
@@ -157,7 +159,7 @@ $(document).ready(function () {
     // 获取手机验证码
     getValicodeBtn.on("click", function () {
         var tipOption = {
-            tips: [1, "#2B81E2"],
+            tips: [1, "#1767EC"],
             time: 1500,
             end: function () { hasTip = false; }
         }
@@ -208,7 +210,7 @@ $(document).ready(function () {
             }, 1000);
         }
     });
-    // 修改安全信息（手机，邮箱）
+    // 修改账户信息（手机，邮箱）
     $("#securityInfo .submitBtn").on("click", function () {
         validate($(this));
     })
@@ -220,7 +222,7 @@ $(document).ready(function () {
             changeEmailEle = emailInput.prev(".info-name");
 
         var tipOption = {
-            tips: [1, "#2B81E2"],
+            tips: [1, "#1767EC"],
             time: 1500,
             end: function () { hasTip = false; }
         }

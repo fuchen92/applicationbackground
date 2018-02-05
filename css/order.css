@@ -37,8 +37,8 @@
     cursor: pointer;
 }
 .classify-ordermenu.active {
-    color: #113689;
-    border-bottom: 2px solid #113689;
+    color: #1767EC;
+    border-bottom: 2px solid #1767EC;
 }
 .allorder {
     margin-right: 40px;
@@ -99,7 +99,7 @@
 }
 .paystatus {
     font-size: 14px;
-    color: #E54144;
+    color: #FF1C20;
 }
 .cancel-order {
     height: 30px;
@@ -117,7 +117,7 @@
 }
 .allot-link {
     line-height: 20px;
-    color: #1E66AC;
+    color: #1767EC;
     text-decoration: underline;
     margin-top: 3px;
 }
@@ -184,7 +184,7 @@
 .allticket-link {
     font-size: 16px;
     padding: 5px 10px;
-    background-color: #133485;
+    background-color: #1767EC;
     color: #fff;
     height: 20px;
     line-height: 20px;
@@ -207,7 +207,7 @@
     line-height: 40px;
     padding: 0 40px;
     font-size: 16px;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     border-radius: 2px;
 }

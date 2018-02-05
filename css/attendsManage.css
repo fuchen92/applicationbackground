@@ -88,15 +88,15 @@ tr td.companyCN, tr td.mobile, tr td.email {
     width: 22%;
 }
 .ticket-type {
-    padding: 5px 15px;
+    /* padding: 5px 15px;
     background: #EEEEEE;
-    border-radius: 20px;
-    color: #113689;
+    border-radius: 20px; */
+    font-weight: bold;
 }
 .already-allot {
     font-weight: bold;
     border: none;
-    background-color: #1E66AC;
+    background-color: #1767EC;
     color: #fff;
 }
 .no-allot {
@@ -109,7 +109,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     line-height: 30px;
     text-align: center;
     background-color: #fff;
-    color: #1E66AC;
+    color: #1767EC;
     cursor: pointer;
 }
 
@@ -122,7 +122,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     margin-bottom: 40px;
 }
 .ticket-link {
-    color: #1E66AC;
+    color: #1767EC;
     text-decoration: underline;
 }
 .attention {
@@ -134,14 +134,14 @@ tr td.companyCN, tr td.mobile, tr td.email {
     height: 20px;
     line-height: 20px;
     margin-top: 10px;
-    color: #E54144;
+    color: #858585;
 }
 .buy-again {
     height: 40px;
     line-height: 40px;
     padding: 0 40px;
     font-size: 16px;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     border-radius: 2px;
 }
@@ -231,7 +231,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     display: block;
     width: 180px;
     height: 40px;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     text-align: center;
     line-height: 40px;
