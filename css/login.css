@@ -110,7 +110,7 @@ button:disabled:hover {
     cursor: pointer;
 }
 .getValicode:hover {
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
 }
 .autologin {
@@ -160,7 +160,7 @@ button:disabled:hover {
     height: 45px;
     line-height: 45px;
     text-align: center;
-    background-color: #113689;
+    background-color: #1767EC;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
@@ -171,7 +171,7 @@ button:disabled:hover {
     line-height: 20px;
     text-align: center;
     font-size: 14px;
-    color: #1E66AC;
+    color: #1767EC;
     margin-top: 20px;
     cursor: pointer;
 }
