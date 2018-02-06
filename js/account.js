@@ -76,6 +76,30 @@ $(document).ready(function () {
             return false;
         }
 
+        var personInfo = {
+            name: $.trim($("#changeName").val()),
+            job: $.trim($("#changeJob").val()),
+            company: $.trim($("#changeCompany").val()),
+            tel: $.trim($("#changeTel").val())
+        }
+
+        changeColumns.each(function () {
+            var inputEle = $(this).children("input");
+            var infoValue = $(this).children(".info-name");
+            if (inputEle.val() == "" || inputEle.val().length == 0) {
+                return;
+            } else {
+                infoValue.text(inputEle.val());
+                inputEle.attr("placeholder", infoValue.text());
+                inputEle.val("");
+            }
+        });
+        $("#personalInfo .info-column").removeClass("changeActive");
+        $("#personalInfo .cancelBtn").removeAttr("style");
+        $("#personalInfo .changeBtn").css("display", "inline-block");
+        layer.closeAll();
+        $(this).prop("disabled", true);
+
         // if ($("#changeName").parent().hasClass("changeActive")) {
             //     needChange = true;
             //     if ($("#changeName").val() == "" || $("#changeName").val().length == 0) {
@@ -109,29 +133,7 @@ $(document).ready(function () {
             //     }
         // }
         
-        var personInfo = {
-            name: $.trim($("#changeName").val()),
-            job: $.trim($("#changeJob").val()),
-            company: $.trim($("#changeCompany").val()),
-            tel: $.trim($("#changeTel").val())
-        }
-
-        changeColumns.each(function () {
-            var inputEle = $(this).children("input");
-            var infoValue = $(this).children(".info-name");
-            if (inputEle.val() == "" || inputEle.val().length == 0) {
-                return;
-            } else {
-                infoValue.text(inputEle.val());
-                inputEle.attr("placeholder", infoValue.text());
-                inputEle.val("");
-            }
-        });
-        $("#personalInfo .info-column").removeClass("changeActive");
-        $("#personalInfo .cancelBtn").removeAttr("style");
-        $("#personalInfo .changeBtn").css("display", "inline-block");
-        layer.closeAll();
-        $(this).prop("disabled", true);
+        
     });
 
 
