@@ -18,6 +18,8 @@
                     <img class="logo-img" src="css/img/logo.png" />
                 </a>
             </div>
+            <b class="logo-divide lt"></b>
+            <p class="logo-desc lt">报名信息管理</p>
             <ul class="nav-list rt">
                 <li class="nav-item lt">
                     <div class="navitem-caret">
@@ -167,8 +169,8 @@
                                 您还有 <span class="ticket-count">1</span> 张门票未分配，请 <a class="ticket-link" href="order.html?alreadypay=true">点击查看</a>
                             </p>
                             <div class="attention">
-                                <p class="attention-text lt">注：本次峰会参会人员信息需在X月X日前完成提交。</p>
-                                <a class="buy-again rt" href="#">增加购票</a>
+                                <p class="attention-text">注：请在3月31日前分配全部参会信息，信息提交后工作人员将进行校对审核，审核后的部分信息将在网站/APP名录、胸牌等物料展示体现。</p>
+                                <a class="buy-again rt" href="#">继续购票</a>
                             </div>
                             <!-- <p class="contact">
                                 有问题，请联系我们：020-28829750
@@ -199,10 +201,12 @@
                     <div class="form-item lt">
                         <input class="allot-input" type="text" placeholder="中文公司名称" data-role='[{ "name": "中文公司名称" }]'>
                         <p class="form-tips">请输入中文公司名称</p>
+                        <p class="form-desc">将展示在参会胸牌， 8 个汉字内为宜</p>
                     </div>
                     <div class="form-item rt">
                         <input class="allot-input" type="text" placeholder="英文公司名称" data-role='[{ "name": "英文公司名称" }]'>
                         <p class="form-tips">请输入英文公司名称</p>
+                        <p class="form-desc">将展示在胸牌，请区分大小写，18 个字母内为宜</p>
                     </div>
                 </li>
                 <li class="form-group">
@@ -213,22 +217,26 @@
                     <div class="form-item rt">
                         <input class="allot-input" type="text" placeholder="英文职位名称" data-role='[{ "name": "英文职位名称" }]'>
                         <p class="form-tips">请输入英文职位名称</p>
+                        <p class="form-desc">请区分大小写</p>
                     </div>
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
                         <input id="changeMobile" class="allot-input" type="text" placeholder="手机号码" data-role='[{ "name": "手机号码", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
                         <p class="form-tips">请输入手机号码</p>
+                        <p class="form-desc">请填写参会人手机号码以便接收通知</p>
                     </div>
                     <div class="form-item rt">
                         <input class="allot-input" type="text" placeholder="固话号码" data-role='[{ "name": "固话号码" }]'>
                         <p class="form-tips">请输入固话号码</p>
+                        <p class="form-desc">格式：010-12345678-001</p>
                     </div>
                 </li>
                 <li class="form-group">
                     <div class="form-item lt">
                         <input id="changeEmail" class="allot-input" type="text" placeholder="Email地址" data-role='[{ "name": "Email地址", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
                         <p class="form-tips">请输入Email邮箱地址</p>
+                        <p class="form-desc">请填写参会人Email地址以便接收通知</p>
                     </div>
                     <div class="form-item rt">
                         <select id="changeIndustry" class="allot-select" data-role='[{ "name": "行业" }]'>

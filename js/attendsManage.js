@@ -11,6 +11,20 @@ $(document).ready(function () {
 
     var changedInfo = [];           // 保存修改后的信息
 
+    $("#changeForm").on("click keyup",":input",function() {
+        var _this = $(this);
+        $(".form-tips").html("").removeAttr("style");
+        if (_this.nextAll(".form-desc")) {
+            _this.nextAll(".form-desc").css("display", "block");
+        }
+    });
+    $("#changeForm").on("blur",":input",function() {
+        var _this = $(this);
+        if (_this.nextAll(".form-desc")) {
+            _this.nextAll(".form-desc").removeAttr("style");
+        }
+    });
+
     var hasTip = false;
     // 验证函数
     function validate (ele) {

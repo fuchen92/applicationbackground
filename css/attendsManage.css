@@ -88,16 +88,14 @@ tr td.companyCN, tr td.mobile, tr td.email {
     width: 22%;
 }
 .ticket-type {
-    /* padding: 5px 15px;
-    background: #EEEEEE;
-    border-radius: 20px; */
-    font-weight: bold;
+    padding: 5px 15px;
+    border: 1px solid #DEDEDE;
+    border-radius: 20px;
 }
 .already-allot {
-    font-weight: bold;
     border: none;
-    background-color: #1767EC;
-    color: #fff;
+    background-color: #EEEEEE;
+    color: #333333;    
 }
 .no-allot {
     height: 120px;
@@ -126,14 +124,12 @@ tr td.companyCN, tr td.mobile, tr td.email {
     text-decoration: underline;
 }
 .attention {
-    height: 40px;
     overflow: hidden;
     margin-bottom: 50px;
 }
 .attention-text {
-    height: 20px;
     line-height: 20px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     color: #858585;
 }
 .buy-again {
@@ -177,6 +173,26 @@ tr td.companyCN, tr td.mobile, tr td.email {
     color: red;
     display: none;
 }
+.form-desc {
+    padding: 0 13px;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 5px;
+    color: #a3a3a3;
+    display: none;
+}
+.form-desc::before {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border: 4px transparent solid;
+    border-bottom: 4px #a3a3a3 solid;
+    margin-top: -4px;
+    margin-right: 8px;
+    zoom: 1;
+}
 .btn-group {
     text-align: right;
     margin-bottom: 50px;
@@ -213,7 +229,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     margin-bottom: 10px;
 }
 .changeAllot-form .form-item {
-    height: 60px;
+    /* height: 60px; */
 }
 .changeAllot-form .form-tips {
     margin-top: 0;
@@ -235,7 +251,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     color: #fff;
     text-align: center;
     line-height: 40px;
-    margin: 20px auto;
+    margin: 20px auto 0;
     font-size: 16px;
     cursor: pointer;
 }

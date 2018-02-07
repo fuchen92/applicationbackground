@@ -11,6 +11,21 @@ $(document).ready(function () {
     
     noAllotCount - 1 <= 0 && addAnother.remove();
 
+    var ticketsPrivilege = $("#ticketsPrivilege"),
+        privileges = $("#privileges"),
+        closePrivileges = $("#closePrivileges"),
+        cancelPrivileges = $("#cancelPrivileges");
+
+    ticketsPrivilege.on("click", function () {
+        privileges.css("display", "block");
+    });
+    closePrivileges.on("click", function () {
+        privileges.removeAttr("style");
+    });
+    cancelPrivileges.on("click", function () {
+        closePrivileges.trigger("click");
+    });
+
     // 添加下一个被分配人
     var canAddCount = noAllotCount;
     addAnother.on("click", function () {
@@ -29,7 +44,7 @@ $(document).ready(function () {
     function validate (ele) {
         hasTip = false;
         var attr = ele.attr("data-role");
-        var formTips = ele.next(".form-tips");
+        var formTips = ele.nextAll(".form-tips");
         if (attr) {
             var role = eval(attr);
             var currVal = ele.val();
@@ -53,7 +68,17 @@ $(document).ready(function () {
         return true;
     }
     $("#noallot, #changeDialog").on("click keyup",":input",function() {
+        var _this = $(this);
         $(".form-tips").html("").removeAttr("style");
+        if (_this.nextAll(".form-desc")) {
+            _this.nextAll(".form-desc").css("display", "block");
+        }
+    });
+    $("#noallot, #changeDialog").on("blur",":input",function() {
+        var _this = $(this);
+        if (_this.nextAll(".form-desc")) {
+            _this.nextAll(".form-desc").removeAttr("style");
+        }
     });
 
     // var isRepeat = false;  
