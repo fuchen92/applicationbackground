@@ -27,7 +27,7 @@ input:focus, select:focus {
     background-color: #fff;
 }
 .attends-desc {
-    font-size: 14px;
+    font-size: 15px;
     height: 20px;
     line-height: 20px;
     margin: 22px 30px 0 0;
@@ -51,7 +51,7 @@ input:focus, select:focus {
 }
 .allot-table {
     width: 99.8%;
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
     border-collapse: collapse;
     margin-bottom: 30px;
@@ -61,6 +61,7 @@ input:focus, select:focus {
     height: 40px;
 }
 .thead > th {
+    font-size: 15px;
     font-weight: normal;
 }
 .white-divide {
@@ -88,39 +89,42 @@ tr td.companyCN, tr td.mobile, tr td.email {
     width: 22%;
 }
 .ticket-type {
-    padding: 5px 15px;
+    padding: 0px 8px;
     border: 1px solid #DEDEDE;
     border-radius: 20px;
 }
 .already-allot {
+    font-size: 15px;
     border: none;
     background-color: #EEEEEE;
     color: #333333;    
 }
 .no-allot {
     height: 120px;
-    color: #CDCDCD;
+    color: #858585;
 }
 .changeBtn {
     width: 70px;
     height: 30px;
+    font-size: 15px;
     line-height: 30px;
     text-align: center;
     background-color: #fff;
-    color: #1767EC;
+    color: #1683ef;
     cursor: pointer;
 }
 
 .allot-tips {
     box-sizing: border-box;
     height: 50px;
+    font-size: 15px;
     line-height: 50px;
     padding: 0 15px;
     border: 1px solid #DEDEDE;
     margin-bottom: 40px;
 }
 .ticket-link {
-    color: #1767EC;
+    color: #1683ef;
     text-decoration: underline;
 }
 .attention {
@@ -128,16 +132,17 @@ tr td.companyCN, tr td.mobile, tr td.email {
     margin-bottom: 50px;
 }
 .attention-text {
+    font-size: 15px;
     line-height: 20px;
     margin-bottom: 10px;
-    color: #858585;
+    color: #777777;
 }
 .buy-again {
     height: 40px;
     line-height: 40px;
     padding: 0 40px;
-    font-size: 16px;
-    background-color: #1767EC;
+    font-size: 15px;
+    background-color: #1683ef;
     color: #fff;
     border-radius: 2px;
 }
@@ -159,6 +164,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
 .allot-input, .allot-select {
     width: 100%;
     height: 40px;
+    font-size: 15px;
     padding: 0 10px;
     border: 1px solid #D3D3D3;
     background-color: #F8F8F8;
@@ -247,9 +253,10 @@ tr td.companyCN, tr td.mobile, tr td.email {
     display: block;
     width: 180px;
     height: 40px;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
     text-align: center;
+    font-size: 15px;
     line-height: 40px;
     margin: 20px auto 0;
     font-size: 16px;

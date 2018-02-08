@@ -71,7 +71,7 @@ nav > .container {
     width: 80%;
 }
 .logo {
-    width: 110px;
+    width: 105px;
     height: 55px;
     overflow: hidden;
     margin-top: 23px;
@@ -81,13 +81,15 @@ nav > .container {
 }
 .logo-divide {
     display: block;
-    height: 15px;
+    height: 25px;
     border-left: 1px solid #CDCDCD;
-    margin: 42px 15px 0 15px;
+    margin: 38px 15px 0 15px;
 }
 .logo-desc {
+    font-weight: bold;
+    font-size: 16px;
     line-height: 20px;
-    margin-top: 40px;
+    margin-top: 35px;
 }
 .nav-list {
     width: auto;
@@ -183,7 +185,7 @@ nav > .container {
     height: 315px;
     background-color: #fff;
     text-align: center;
-    padding: 17px;
+    padding: 20px;
 }
 .siderbar-menuitem {
     display: block;
@@ -195,7 +197,7 @@ nav > .container {
     margin: 10px 0;
 }
 .siderbar-menuitem.active {
-    background-color: #4E9FEF;
+    background-color: #1683ef;
     color: #fff;
     border-radius: 2px;
 }
@@ -208,7 +210,8 @@ nav > .container {
     width: 90px;
     height: 115px;
     background-color: #fff;
-    border: 2px solid #F8F8F8;
+    border: 1px solid #C1C1C1;
+    border-radius: 5px;
     cursor: pointer;
 }
 .contact-icon {
@@ -221,7 +224,7 @@ nav > .container {
 .contact-tips {
     text-align: center;
     color: #181818;
-    font-size: 16px;
+    font-size: 14px;
 }
 .contact-box {
     box-sizing: border-box;
@@ -232,18 +235,22 @@ nav > .container {
     height: 135px;
     padding: 15px;
     background-color: #fff;
-    border: 2px solid #F8F8F8;
-    border-right: 0;
+    border: 1px solid #C1C1C1;
+    /* border-right: 0; */
     display: none;    
 }
 .contact-box::after {
     position: absolute;
     content: "";
-    border: 10px solid transparent;
-    border-left-color: #fff;
-    border-left-width: 15px;
+    width: 15px;
     top: 55px;
-    right: -25px;
+    right: -8px;
+    height: 15px;
+    background-color: #fff;
+    border: 1px solid #C1C1C1;
+    border-left-color: #fff;
+    border-bottom-color: #fff;
+    transform: rotate(45deg);
 }
 .contact-item:not(:last-child) {
     margin-bottom: 15px;
@@ -263,7 +270,7 @@ nav > .container {
     background-size: 20px;
 }
 .contact-tel {
-    color: #1E66AC;
+    color: #1683ef;
 }
 .contact-desc {
     font-size: 12px;
@@ -335,7 +342,7 @@ nav > .container {
     line-height: 30px;
     text-align: center;
     padding: 0 15px;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
     cursor: pointer;
 }

@@ -30,15 +30,15 @@
     display: inline-block;
     height: 30px;
     line-height: 30px;
-    font-size: 16px;
+    font-size: 15px;
     color: #181818;
     text-align: center;
     margin-top: 15px;
     cursor: pointer;
 }
 .classify-ordermenu.active {
-    color: #1767EC;
-    border-bottom: 2px solid #1767EC;
+    color: #1683ef;
+    border-bottom: 2px solid #1683ef;
 }
 .allorder {
     margin-right: 40px;
@@ -75,7 +75,7 @@
     height: 50px;
 }
 .thead th {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: normal;
 }
 .white-divide {
@@ -117,14 +117,14 @@
 }
 .allot-link {
     line-height: 20px;
-    color: #1767EC;
+    color: #1683ef;
     text-decoration: underline;
     margin-top: 3px;
 }
     /* 未支付情况 */
 .nopay {
     display: inline-block;
-    color: #CDCDCD;
+    color: #999999;
     cursor: not-allowed;
     text-decoration: none;
 }
@@ -137,7 +137,7 @@
     width: 17px;
     height: 17px;
     line-height: 20px;
-    background-color: #CFD7E7;
+    background-color: #C1C1C1;
     font-size: 14px;
     border-radius: 50%;
     text-align: center;
@@ -178,13 +178,14 @@
     height: 120px;
 }
 .nopayorder-text {
-    color: #CDCDCD;
+    font-size: 15px;
+    color: #858585;
     margin-bottom: 10px;
 }
 .allticket-link {
-    font-size: 16px;
+    font-size: 15px;
     padding: 5px 10px;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
     height: 20px;
     line-height: 20px;
@@ -198,16 +199,16 @@
     margin: 25px 0;
 }
 .paytips-text {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 40px;
-    color: #858585;
+    color: #777777;
 }
 .buy-again {
     height: 40px;
     line-height: 40px;
     padding: 0 40px;
-    font-size: 16px;
-    background-color: #1767EC;
+    font-size: 15px;
+    background-color: #1683ef;
     color: #fff;
     border-radius: 2px;
 }

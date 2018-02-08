@@ -45,7 +45,7 @@ $(document).ready(function () {
             changeColumns = $("#personalInfo .column-second");
 
         var tipOption = {
-            tips: [1, "#1767EC"],
+            tips: [1, "#1683ef"],
             time: 1500,
             end: function () { hasTip = false; }
         }
@@ -161,7 +161,7 @@ $(document).ready(function () {
     // 获取手机验证码
     getValicodeBtn.on("click", function () {
         var tipOption = {
-            tips: [1, "#1767EC"],
+            tips: [1, "#1683ef"],
             time: 1500,
             end: function () { hasTip = false; }
         }
@@ -224,7 +224,7 @@ $(document).ready(function () {
             changeEmailEle = emailInput.prev(".info-name");
 
         var tipOption = {
-            tips: [1, "#1767EC"],
+            tips: [1, "#1683ef"],
             time: 1500,
             end: function () { hasTip = false; }
         }

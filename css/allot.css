@@ -31,7 +31,7 @@ input:focus, select:focus {
 }
 .allot-desc {
     position: relative;
-    font-size: 16px;
+    font-size: 15px;
     height: 20px;
     line-height: 20px;
     margin: 22px 30px 0 0;
@@ -85,7 +85,7 @@ input:focus, select:focus {
     display: inline-block;
     font-size: 14px;
     line-height: 20px;
-    color: #4E9FEF;
+    color: #1683ef;
     cursor: pointer;
 }
 
@@ -109,6 +109,7 @@ input:focus, select:focus {
     width: 95%;
 }
 .allot-title {
+    font-size: 15px;
     height: 40px;
     line-height: 40px;
 }
@@ -123,7 +124,7 @@ input:focus, select:focus {
     height: 25px;
     line-height: 25px;
     margin: 5px 0;
-    font-size: 14px;
+    font-size: 15px;
     overflow: hidden;
 }
 .alloted-item:last-child {
@@ -140,8 +141,9 @@ input:focus, select:focus {
 .changeAllotBtn {
     width: 70px;
     height: 30px;
+    font-size: 15px;
     line-height: 30px;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
     text-align: center;
     border-radius: 2px;
@@ -153,7 +155,7 @@ input:focus, select:focus {
     box-sizing: border-box;
     height: 20px;
     line-height: 20px;
-    font-size: 14px;
+    font-size: 15px;
     color: #858585;
     margin: 20px 0 30px;
     padding-left: 30px;
@@ -180,7 +182,7 @@ input:focus, select:focus {
     width: 100%;
     height: 40px;
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 15px;
     border: 1px solid #D3D3D3;
     background-color: #F8F8F8;
     color: #565656;
@@ -222,12 +224,12 @@ input:focus, select:focus {
     box-sizing: border-box;
     width: 180px;
     height: 40px;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     line-height: 40px;
     border-radius: 2px;
     cursor: pointer;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
 }
 .submit-allot {
@@ -236,8 +238,8 @@ input:focus, select:focus {
 }
 .add-another {
     background-color: #fff;
-    border: 1px solid #1767EC;
-    color: #1767EC;
+    border: 1px solid #1683ef;
+    color: #1683ef;
 }
 
 /********** 修改分配信息对话框 **********/
@@ -290,12 +292,12 @@ input:focus, select:focus {
     display: block;
     width: 180px;
     height: 40px;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
     text-align: center;
     line-height: 40px;
     margin: 20px auto 0;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
 }
 

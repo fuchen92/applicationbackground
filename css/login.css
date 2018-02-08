@@ -74,16 +74,30 @@ button:disabled:hover {
     transform: translate(-50%, -50%);
 }
 .logo {
+    height: 60px;
+    margin-bottom: 65px;
+    overflow: hidden;
     text-align: center;
-    margin-bottom: 20px;
 }
 .logo > img {
     display: inline-block;
-    width: 150px;
+    vertical-align: middle;    
+    width: 130px;
+    
+}
+.divide {
+    display: inline-block;
+    vertical-align: middle;    
+    height: 15px;
+    border-left: 1px solid #CDCDCD;
+    /* margin: 24px 15px 0 15px; */
+    margin: 0 15px;
 }
 .logo-title {
-    color: #1C327C;
-    margin-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 22px;
 }
 .form-group {
     position: relative;
@@ -114,7 +128,7 @@ button:disabled:hover {
     cursor: pointer;
 }
 .getValicode:hover {
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
 }
 .autologin {
@@ -164,7 +178,7 @@ button:disabled:hover {
     height: 45px;
     line-height: 45px;
     text-align: center;
-    background-color: #1767EC;
+    background-color: #1683ef;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
@@ -175,7 +189,7 @@ button:disabled:hover {
     line-height: 20px;
     text-align: center;
     font-size: 14px;
-    color: #1767EC;
+    color: #1683ef;
     margin-top: 20px;
     cursor: pointer;
 }

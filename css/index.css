@@ -1,15 +1,15 @@
 /********** 首页内容 **********/
-/* .wrapper > .container {
-    width: 80%;
-} */
+.wrapper {
+    margin-bottom: 50px;
+}
 .welcome {
     box-sizing: border-box;
-    height: 80px;
-    padding: 25px 0;
+    height: 60px;
+    padding: 15px 0;
     overflow: hidden;
 }
 .welcome-text {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 30px;
     font-weight: normal;
 }
@@ -22,9 +22,9 @@
 }
 
 .classify-infobox {
-    height: 50px;
-    line-height: 50px;
-    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
     background-color: #EEEEEE;
 }
 .classify-infobox > .container,
@@ -42,7 +42,7 @@
     margin-top: 15px;
 }
 .activity-item {
-    height: 150px;
+    height: 140px;
     background-color: #fff;
     margin-bottom: 15px;
 }
@@ -52,9 +52,9 @@
 }
 .activity-logo {
     box-sizing: border-box;
-    width: 105px;
-    height: 105px;
-    margin: 25px 15px 0 0;
+    width: 95px;
+    height: 95px;
+    margin: 25px 20px 0 0;
     border-radius: 50%;
 }
 .activity-logo-img {
@@ -68,12 +68,12 @@
     margin-top: 40px;
 }
 .activity-item-title {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 15px;    
 }
 .activity-time, .activity-site {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 25px;
     padding-left: 25px;
     background-repeat: no-repeat;
@@ -94,37 +94,37 @@
     overflow: hidden;
 }
 .ticket-status-text {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #858585;
     margin: 7px 40px 0 0;
 }
 .hasbuyed .ticket-status-text {
     position: relative;
-    color: #1767EC;
+    color: #1683ef;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 .hasbuyed .ticket-status-text::after {
     position: absolute;
     top: 5px;
     content: "";
-    color: #1767EC;
+    color: #1683ef;
     margin-left: 5px;
     width: 8px;
     height: 8px;
-    border: 1px solid #1767EC;
+    border: 1px solid #1683ef;
     border-left-color: transparent;
     border-bottom-color: transparent;
     transform: rotate(45deg);
 }
 .buy-ticket {
     box-sizing: border-box;
-    width: 140px;
+    width: 130px;
     height: 35px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     line-height: 33px;
     color: #fff;
-    background-color: #1767EC;
+    background-color: #1683ef;
 }
