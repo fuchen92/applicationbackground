@@ -184,7 +184,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     font-size: 12px;
     line-height: 20px;
     margin-top: 5px;
-    color: #a3a3a3;
+    color: #858585;
     display: none;
 }
 .form-desc::before {
@@ -194,7 +194,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     vertical-align: middle;
     content: "";
     border: 4px transparent solid;
-    border-bottom: 4px #a3a3a3 solid;
+    border-bottom: 4px #858585 solid;
     margin-top: -4px;
     margin-right: 8px;
     zoom: 1;
