@@ -113,6 +113,50 @@ tr td.companyCN, tr td.mobile, tr td.email {
     color: #1683ef;
     cursor: pointer;
 }
+.audit-status {
+    color: #999999;
+    cursor: not-allowed;
+}
+.audit-tips {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 20px;
+    background-color: #C1C1C1;
+    font-size: 14px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.audittip-text {
+    position: absolute;
+    height: 25px;
+    line-height: 25px;
+    top: -35px;
+    right: -5px;
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 2px;
+    background-color: #EEEEEE;
+    color: #181818;
+    display: none;
+}
+.audittip-text::after {
+    position: absolute;
+    content: "";
+    border: 8px solid #EEEEEE;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-width: 10px;
+    top: 22px;
+    right: 5px;
+}
+.audit-tips:hover .audittip-text {
+    display: block;
+}
 
 .allot-tips {
     box-sizing: border-box;

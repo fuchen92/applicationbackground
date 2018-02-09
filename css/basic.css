@@ -60,6 +60,10 @@ select {
     background-position: right 10px center;
     color: #181818;
 }
+button:disabled {
+    background-color: #EDEDEE;
+    cursor: not-allowed;
+}
 
 /********** 公共头部 **********/
 nav {
