@@ -1,37 +1,21 @@
 $(document).ready(function () {
-    var changeMobileDialog = $("#changeMobileDialog"),
-        closeDialog = $("#closeDialog"),
-        mobileInput = $("#changeMobile"),
-        valicode = $("#valicode"),
-        getValicodeBtn = $("#getValicode"),
-        submitMobile = $("#submitMobile");
-
-    var mobileVal = $("#mobileVal");
-
-    var num = 59,
-        timer = null;
-
-    $(".changeBtn").on("click", function () {
-        var index = $(this).index(".changeBtn");
-        if (index != 0) {
-            $("#submitChange").prop("disabled", false);
-            switchStatus($(this));
-        } else {
-            changeMobileDialog.css("display", "block");
-        }        
+    
+    $(".infomenu-item").on("click", function () {
+        var index = $(this).index();
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".accountinfo-item").eq(index).addClass("active").siblings().removeClass("active");
     });
 
-    closeDialog.on("click", function () {
-        layer.closeAll();
-        clearInterval(timer);
-        mobileInput.val("");
-        valicode.val("");
-        getValicodeBtn.prop("disabled", false).text("发送手机验证码");
-        changeMobileDialog.removeAttr("style");
-    })
-
+    
+    $(".changeBtn").on("click", function () {
+        $("#submitChange").prop("disabled", false);
+        switchStatus($(this));
+        
+    });
     $(".cancelBtn").on("click", function () {
         layer.closeAll();
+        clearInterval(timer);
+        getValicodeBtn.prop("disabled", false).text("发送手机验证码");
         switchStatus($(this));
         if ($("#personalInfo .column-second.changeActive").length == 0) {
             $("#submitChange").prop("disabled", true);
@@ -66,30 +50,26 @@ $(document).ready(function () {
             end: function () { hasTip = false; }
         }
 
-        changeColumns.each(function (index) {
-            if (index == 0) {
-                return true;
-            } else {
-                var inputEle = $(this).children("input");
-                
-                if ($(this).hasClass("changeActive")) {
-                    var attr = inputEle.attr("data-role");
-                    if (attr) {
-                        var role = eval(attr);
-                        if (role && role.length > 0) {
-                            if (inputEle.val() == "" || inputEle.val().length == 0) {
-                                if (hasTip == false) {
-                                    layer.tips("请填写" + role[0].name, inputEle, tipOption);
-                                    hasTip = true;
-                                }
-                                catchErr = true;
-                                inputEle.focus();
-                                return false;
+        changeColumns.each(function () {
+            var inputEle = $(this).children("input");
+            
+            if ($(this).hasClass("changeActive")) {
+                var attr = inputEle.attr("data-role");
+                if (attr) {
+                    var role = eval(attr);
+                    if (role && role.length > 0) {
+                        if (inputEle.val() == "" || inputEle.val().length == 0) {
+                            if (hasTip == false) {
+                                layer.tips("请填写" + role[0].name, inputEle, tipOption);
+                                hasTip = true;
                             }
+                            catchErr = true;
+                            inputEle.focus();
+                            return false;
                         }
                     }
-                    
                 }
+                
             }
         });
         if (catchErr) {
@@ -103,19 +83,15 @@ $(document).ready(function () {
             tel: $.trim($("#changeTel").val())
         }
 
-        changeColumns.each(function (index) {
-            if (index == 0) {
-                return true;
+        changeColumns.each(function () {
+            var inputEle = $(this).children("input");
+            var infoValue = $(this).children(".info-name");
+            if (inputEle.val() == "" || inputEle.val().length == 0) {
+                return;
             } else {
-                var inputEle = $(this).children("input");
-                var infoValue = $(this).children(".info-name");
-                if (inputEle.val() == "" || inputEle.val().length == 0) {
-                    return;
-                } else {
-                    infoValue.text(inputEle.val());
-                    inputEle.attr("placeholder", infoValue.text());
-                    inputEle.val("");
-                }
+                infoValue.text(inputEle.val());
+                inputEle.attr("placeholder", infoValue.text());
+                inputEle.val("");
             }
         });
         $("#personalInfo .info-column").removeClass("changeActive");
@@ -160,6 +136,16 @@ $(document).ready(function () {
         
     });
 
+
+
+    
+    var mobileInput = $("#changeMobile"),
+        emailInput = $("#changeEmail"),
+        valicode = $("#valicode"),
+        getValicodeBtn = $("#getValicode");
+
+    var num = 59,
+        timer = null;
     // 倒计时
     function countdown() {
         num--;
@@ -226,59 +212,97 @@ $(document).ready(function () {
             }, 1000);
         }
     });
-    
-    submitMobile.on("click", function () {
+    // 修改账户信息（手机，邮箱）
+    $("#securityInfo .submitBtn").on("click", function () {
+        validate($(this));
+    })
+
+    function validate (btnEle) {
+        var btn = btnEle.get(0),
+            changeColumn = btnEle.closest(".info-group").children(".column-second, .column-third"),
+            changeMobileEle = mobileInput.prev(".info-name"),
+            changeEmailEle = emailInput.prev(".info-name");
 
         var tipOption = {
             tips: [1, "#1683ef"],
             time: 1500,
             end: function () { hasTip = false; }
         }
-
-        if (mobileInput.val() == "" || mobileInput.length == 0) {
-            if (hasTip == false) {
-                layer.tips("请填写新的手机号码", mobileInput, tipOption);
-                hasTip = true;
+        
+        if (changeColumn.hasClass("changeActive")) {
+            switch (btn.id) {
+                case "submitMobile":
+                    if (mobileInput.val() == "" || mobileInput.length == 0) {
+                        if (hasTip == false) {
+                            layer.tips("请填写新的手机号码", mobileInput, tipOption);
+                            hasTip = true;
+                        }
+                        mobileInput.focus();
+                        return false;
+        
+                    } else if (!/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/.test(mobileInput.val())) {
+                        if (hasTip == false) {
+                            layer.tips("手机号码格式不正确，请检查", mobileInput, tipOption);
+                            hasTip = true;
+                        }
+                        mobileInput.focus();
+                        return false;
+                    }
+                    if (valicode.val() == "" || valicode.val().length == 0) {
+                        layer.tips("请填写验证码", valicode, tipOption);
+                        valicode.focus();
+                        return false;
+                    } else if ( !/^\d{6}$/.test( $.trim(valicode.val()) ) ) {
+                        if (hasTip == false) {
+                            layer.tips("验证码是6位数字哦。", valicode, tipOption);
+                            hasTip = true;
+                        }
+                        valicode.focus();
+                        return false;
+                    }
+                    var changeMobileObj = {
+                        mobile: $.trim(mobileInput.val()),
+                        valicode: $.trim(valicode.val())
+                    }
+                    
+                    changeMobileEle.text(mobileInput.val());
+                    mobileInput.val("");
+                    valicode.val("");
+                    num = 59;
+                    clearInterval(timer);
+                    getValicodeBtn.prop("disabled", false).text("发送手机验证码");
+                    layer.closeAll();
+                    break;
+                case "submitEmail":
+                    if (emailInput.val() == "" || emailInput.val().length == 0) {
+                        if (hasTip == false) {
+                            layer.tips("请填写邮箱", emailInput, tipOption);
+                            hasTip = true;
+                        }
+                        emailInput.focus();
+                        return false;
+                    } else if (!/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(emailInput.val())) {
+                        if (hasTip == false) {
+                            layer.tips("邮箱格式不正确，请检查", emailInput, tipOption);
+                            hasTip = true;
+                        }
+                        emailInput.focus();
+                        return false;
+                    }
+                    var changeEmailObj = {
+                        email: $.trim(emailInput.val())
+                    }
+                    changeEmailEle.text(emailInput.val());
+                    emailInput.val("");
+                    layer.closeAll();
+                    break;
             }
-            mobileInput.focus();
-            return false;
-
-        } else if (!/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/.test(mobileInput.val())) {
-            if (hasTip == false) {
-                layer.tips("手机号码格式不正确，请检查", mobileInput, tipOption);
-                hasTip = true;
-            }
-            mobileInput.focus();
+            changeColumn.removeClass("changeActive");
+            btnEle.removeAttr("style").prev(".cancelBtn").removeAttr("style");
+            btnEle.prevAll(".changeBtn").css("display", "inline-block");
+        } else {
             return false;
         }
-        if (valicode.val() == "" || valicode.val().length == 0) {
-            if (hasTip == false) {
-                layer.tips("请填写验证码", valicode, tipOption);
-                hasTip = true;
-            }
-            valicode.focus();
-            return false;
-        } else if ( !/^\d{6}$/.test( $.trim(valicode.val()) ) ) {
-            if (hasTip == false) {
-                layer.tips("验证码是6位数字哦。", valicode, tipOption);
-                hasTip = true;
-            }
-            valicode.focus();
-            return false;
-        }
-        var changeMobileObj = {
-            mobile: $.trim(mobileInput.val()),
-            valicode: $.trim(valicode.val())
-        }
-
-        mobileVal.text(mobileInput.val());
-        mobileInput.val("");
-        valicode.val("");
-        num = 59;
-        clearInterval(timer);
-        getValicodeBtn.prop("disabled", false).text("发送手机验证码");
-        layer.closeAll();
-        changeMobileDialog.removeAttr("style");
-    });
+    }
 
 });

@@ -49,45 +49,18 @@
             </div>
             <div class="account-box">
                 <div class="container">
-                    <!-- <ul class="info-menu">
+                    <ul class="info-menu">
                         <li class="infomenu-item lt active">联系人信息</li>
                         <li class="infomenu-item lt">账户信息</li>
-                    </ul> -->
-                    <p class="account-desc">
-                        参会付款或参会提醒等重要信息，我们将通过短信/邮件/电话发送至联系人<br>
-                        联系人手机号也是登录该平台的唯一凭证方式。<br>
-                        如下信息为您报名时所提交填写，如须变更联系人，请仔细核对信息。
-                    </p>
+                    </ul>
                     <div class="account-info">
                         <div class="accountinfo-item active">
                             <ul class="info-table" id="personalInfo">
-                                <li class="info-group">
-                                    <div class="info-column column-first lt">联系人手机：</div>
-                                    <div class="info-column column-second lt">
-                                        <p id="mobileVal" class="info-name">13888888888</p>
-                                    </div>
-                                    <div class="info-column column-third lt">&nbsp;</div>
-                                    <div class="info-column column-fourth lt">
-                                        <button class="changeBtn" style="display: inline-block;">修改</button>
-                                    </div>
-                                </li>
                                 <li class="info-group">
                                     <div class="info-column column-first lt">姓名：</div>
                                     <div class="info-column column-second lt">
                                         <p class="info-name">张三</p>
                                         <input id="changeName" class="info-input" type="text" placeholder="张三" data-role='[{ "name": "姓名" }]'>
-                                    </div>
-                                    <div class="info-column column-third lt">&nbsp;</div>
-                                    <div class="info-column column-fourth lt">
-                                        <button class="changeBtn" style="display: inline-block;">修改</button>
-                                        <button class="cancelBtn">取消</button>
-                                    </div>
-                                </li>
-                                <li class="info-group">
-                                    <div class="info-column column-first lt">所属公司：</div>
-                                    <div class="info-column column-second lt">
-                                        <p class="info-name">环球旅讯</p>
-                                        <input id="changeCompany" class="info-input" type="text" placeholder="环球旅讯" data-role='[{ "name": "公司" }]'>
                                     </div>
                                     <div class="info-column column-third lt">&nbsp;</div>
                                     <div class="info-column column-fourth lt">
@@ -108,6 +81,18 @@
                                     </div>
                                 </li>
                                 <li class="info-group">
+                                    <div class="info-column column-first lt">所属公司：</div>
+                                    <div class="info-column column-second lt">
+                                        <p class="info-name">环球旅讯</p>
+                                        <input id="changeCompany" class="info-input" type="text" placeholder="环球旅讯" data-role='[{ "name": "公司" }]'>
+                                    </div>
+                                    <div class="info-column column-third lt">&nbsp;</div>
+                                    <div class="info-column column-fourth lt">
+                                        <button class="changeBtn" style="display: inline-block;">修改</button>
+                                        <button class="cancelBtn">取消</button>
+                                    </div>
+                                </li>
+                                <li class="info-group">
                                     <div class="info-column column-first lt">固话：</div>
                                     <div class="info-column column-second lt">
                                         <p class="info-name">020 - 8123456</p>
@@ -119,26 +104,11 @@
                                         <button class="cancelBtn">取消</button>
                                     </div>
                                 </li>
-                                <li class="info-group">
-                                    <div class="info-column column-first lt">邮箱：</div>
-                                    <div class="info-column column-second lt">
-                                        <p class="info-name">110@qq.com</p>
-                                        <input id="changeEmail" class="info-input" type="text" placeholder="请输入新邮箱" data-role='[{ "name": "邮箱" }]'>
-                                    </div>
-                                    <div class="info-column column-third lt">
-                                        <!-- <p class="column-desc">我们将通过该邮箱和您进行邮件沟通。</p> -->
-                                        &nbsp;
-                                    </div>
-                                    <div class="info-column column-fourth lt">
-                                        <button class="changeBtn" style="display: inline-block;">修改</button>
-                                        <button class="cancelBtn">取消</button>
-                                    </div>
-                                </li>
                             </ul>
-                            <!-- <p class="changeAttention">注：该处的联系人信息您在提交报名信息时所填写的，我们将会和联系人来沟通参会事宜。</p> -->
+                            <p class="changeAttention">注：该处的联系人信息您在提交报名信息时所填写的，我们将会和联系人来沟通参会事宜。</p>
                             <button id="submitChange" class="submitChange" disabled="disabled">提交</button>
                         </div>
-                        <!-- <div class="accountinfo-item">
+                        <div class="accountinfo-item">
                             <ul class="info-table" id="securityInfo">
                                 <li class="info-group">
                                     <div class="info-column column-first lt">联系手机：</div>
@@ -175,30 +145,8 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div> -->
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 修改手机对话框 -->
-    <div id="changeMobileDialog" class="changeMobileDialog">
-        <div class="changeDialog-bg"></div>
-        <div class="changeDialog-wrapper">
-            <div id="closeDialog" class="closeDialog">×</div>
-            <h3 class="changeDialog-title">修改手机</h3>
-            <div class="changeDialog-content">
-                <p class="changeMobileTips">联系人手机是登录该管理后台的唯一方式，请谨慎修改。</p>
-                <div class="form-group">
-                    <input id="changeMobile" class="change-input" type="text" placeholder="请输入新手机号">
-                </div>
-                <div class="form-group">
-                    <input id="valicode" class="change-input validate-input lt" type="text" placeholder="验证码" maxlength="6">
-                    <button id="getValicode" class="getValicode lt" type="button">发送手机验证码</button>
-                </div>
-                <div class="changeDialog-btns">
-                    <button id="submitMobile" class="submitBtn">提交</button>
-                    <!-- <button id="cancelMobile" class="cancelBtn">取消</button> -->
                 </div>
             </div>
         </div>

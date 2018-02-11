@@ -15,15 +15,11 @@
 }
 .account-title {
     font-size: 16px;
+    font-weight: normal;
     color: #181818;
 }
 .account-box {
     background-color: #fff;
-}
-.account-desc {
-    font-size: 15px;
-    line-height: 25px;
-    margin: 20px 0 30px;
 }
 .info-menu {
     height: 30px;
@@ -44,7 +40,7 @@
 }
 .account-info {
     margin-top: 25px;
-    padding: 0 0 30px;
+    padding: 30px 0;
 }
 .accountinfo-item {
     display: none;
@@ -58,9 +54,6 @@
     height: 40px;
     overflow: hidden;
     margin-bottom: 10px;
-}
-#personalInfo > .info-group:first-child {
-    height: auto;
 }
 .info-column {
     position: relative;
@@ -80,9 +73,8 @@
     margin-right: 20px;
 }
 .column-third {
-    /* width: 350px;
-    margin-right: 20px; */
-    display: none;
+    width: 350px;
+    margin-right: 20px;
 }
 .column-desc {
     color: #777777;
@@ -90,11 +82,10 @@
 }
 .info-input {
     position: absolute;
-    top: 1px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 38px;
-    line-height: 38px;
+    height: 40px;
     font-size: 15px;
     border: 1px solid #D3D3D3;
     padding: 0 10px;
@@ -171,93 +162,4 @@
     height: 40px;
     padding: 0 10px;
     border: 1px solid #D3D3D3;
-}
-
-/********** 修改手机对话框 **********/
-.changeMobileDialog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    display: none;
-}
-.changeDialog-bg {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.changeDialog-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-    /* height: 155px; */
-    background-color: #fff;
-    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
-}
-.closeDialog {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    text-align: center;
-    line-height: 20px;
-    cursor: pointer;
-}
-.changeDialog-title {
-    box-sizing: border-box;
-    height: 45px;
-    background-color: #F8F8F8;
-    border-bottom: 1px solid #eeeeee;
-    padding: 0 20px;
-    font-size: 14px;
-    color: #333333;
-    line-height: 44px;
-    font-weight: normal;
-}
-.changeDialog-content {
-    padding: 0 20px;
-}
-.changeMobileTips {
-    font-size: 15px;
-    line-height: 25px;
-    color: #777777;
-    margin: 10px 0;
-    text-align: center;
-}
-.form-group {
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-.change-input {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #D3D3D3;
-    padding: 0 10px;
-    font-size: 15px;
-}
-.validate-input {
-    width: 280px;
-    margin-right: 10px;
-}
-.getValicode {
-    width: 120px;
-    height: 40px;
-    background-color: #1683ef;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-}
-.changeDialog-btns {
-    text-align: center;
-    margin: 0 auto 20px;    
-}
-#submitMobile, #cancelMobile {
-    display: inline-block;
-    width: 100%;
 }
