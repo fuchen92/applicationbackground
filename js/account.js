@@ -28,7 +28,7 @@ $(document).ready(function () {
         valicode.val("");
         getValicodeBtn.prop("disabled", false).text("发送手机验证码");
         changeMobileDialog.removeAttr("style");
-    })
+    });
 
     $(".cancelBtn").on("click", function () {
         layer.closeAll();
