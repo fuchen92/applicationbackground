@@ -86,6 +86,15 @@ $(document).ready(function () {
                                 inputEle.focus();
                                 return false;
                             }
+                            if (role[0].reg && !eval(role[0].reg).test(inputEle.val())) {
+                                if (!hasTip) {
+                                    layer.tips(role[0].name + "格式不正确，请检查", inputEle, tipOption);
+                                    hasTip = true;
+                                }
+                                catchErr = true;
+                                inputEle.focus();
+                                return false;
+                            }
                         }
                     }
                     
