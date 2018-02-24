@@ -18,7 +18,7 @@ $(document).ready(function () {
         saveAllot = $("#saveAllot"),                        // 保存分配的参会嘉宾
         addAnother = $("#addAnother"),                      // 添加下一个参会嘉宾按钮
         btnGroup = $("#btnGroup"),
-        noAllotCount = 0;
+        noAllotCount = 0;                                   // 还剩未分配的门票数量
         // cloneAddAnother = addAnother.clone();
         
 
@@ -247,6 +247,19 @@ $(document).ready(function () {
         allotDialog.css("display", "block");
     });
     closeAllotDialog.on("click", function () {
+        allotDialog.find(".allot-form:gt(0)").remove();
         allotDialog.removeAttr("style");
+    });
+    // 添加下一个
+    allotDialog.on("click", "#addAnother", function () {
+        noAllotCount--;
+        var tem = allotDialog.find(".allot-form").eq(0).clone();
+        tem.find(":input[type=text]").val("");
+        tem.find("select").val(0);
+        tem.find(".form-tips").removeAttr("style");
+        btnGroup.before(tem);
+        if (noAllotCount - 1 <= 0) {
+            addAnother.remove();
+        }
     });
 });
