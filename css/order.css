@@ -78,6 +78,9 @@
     font-size: 15px;
     font-weight: normal;
 }
+td {
+    min-height: 120px;
+}
 .white-divide {
     height: 15px;
     background-color: #fff;
@@ -90,7 +93,8 @@
 }
 .order-date, .order-time,
 .paystatus, .cancel-order,
-.allot-link, .allot-status {
+.allot-link, .allot-status,
+.invoiceStatus, .goInvoice {
     display: block;
 }
 .order-date, .order-time {
@@ -111,6 +115,12 @@
 .already-cancel {
     font-size: 14px;
     color: #858585;
+}
+.goInvoice {
+    line-height: 20px;
+    color: #1683ef;
+    text-decoration: underline;
+    margin-top: 3px;
 }
 .inner-table td {
     height: 60px;
