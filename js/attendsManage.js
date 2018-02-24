@@ -11,14 +11,26 @@ $(document).ready(function () {
 
     var changedInfo = [];           // 保存修改后的信息
 
-    $("#changeForm").on("click keyup",":input",function() {
+    var allotTicket = $(".ticket-link"),                    // 分配相关门票
+        allotDialog = $("#allotDialog"),                    // 分配浮窗对话框
+        closeAllotDialog = $("#closeAllotDialog"),          // 关闭分配浮窗对话框
+        allotTitle = $("#allotTitle"),                      // 分配浮窗标题
+        saveAllot = $("#saveAllot"),                        // 保存分配的参会嘉宾
+        addAnother = $("#addAnother"),                      // 添加下一个参会嘉宾按钮
+        btnGroup = $("#btnGroup"),
+        noAllotCount = 0;
+        // cloneAddAnother = addAnother.clone();
+        
+
+
+    $("#changeForm, #allotDialog").on("click keyup",":input",function() {
         var _this = $(this);
         $(".form-tips").html("").removeAttr("style");
         if (_this.nextAll(".form-desc")) {
             _this.nextAll(".form-desc").css("display", "block");
         }
     });
-    $("#changeForm").on("blur",":input",function() {
+    $("#changeForm, #allotDialog").on("blur",":input",function() {
         var _this = $(this);
         if (_this.nextAll(".form-desc")) {
             _this.nextAll(".form-desc").removeAttr("style");
@@ -205,4 +217,36 @@ $(document).ready(function () {
             }
         }
     }
+
+    allotTicket.on("click", function () {
+        var allotItem = $(this).parent();
+        var ticketType = allotItem.attr("data-tickettype");
+            // ticketCount = allotItem.attr("data-ticketcount");
+
+        noAllotCount = allotItem.attr("data-ticketcount");
+        if (noAllotCount - 1 <= 0) {
+            addAnother.remove();
+        } else if (!$.contains(btnGroup[0], addAnother[0])) {
+            btnGroup.append(addAnother);
+        }
+
+        switch (ticketType) {
+            case "1":
+                allotTitle.text("VIP票嘉宾分配");
+                break;
+            case "2":
+                allotTitle.text("直通票嘉宾分配");
+                break;
+            case "3":
+                allotTitle.text("普通票嘉宾分配");
+                break;
+            case "4":
+                allotTitle.text("展览票嘉宾分配");
+                break;
+        }
+        allotDialog.css("display", "block");
+    });
+    closeAllotDialog.on("click", function () {
+        allotDialog.removeAttr("style");
+    });
 });
