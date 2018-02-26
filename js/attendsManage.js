@@ -221,6 +221,17 @@ $(document).ready(function () {
                 return false;
             }
         }
+
+        // var currVal = elem.val();
+        // console.log(objArr.indexOf(currVal))
+        // if (objArr.indexOf(currVal) == -1) {
+        //     return true;
+        // } else {
+        //     catchErr = true;
+        //     elem.focus();
+        //     elem.next(".form-tips").text(type + "重复，请检查").show();
+        //     return false;
+        // }
     }
 
     allotTicket.on("click", function () {
