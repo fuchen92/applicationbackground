@@ -18,10 +18,13 @@ $(document).ready(function () {
         saveAllot = $("#saveAllot"),                        // 保存分配的参会嘉宾
         addAnother = $("#addAnother"),                      // 添加下一个参会嘉宾按钮
         btnGroup = $("#btnGroup"),
+        noAllotContainer = $("#noAllot"),
+        ticketType = 0,                                     // 分配门票的类型（VIP票，普通票，直通票，展览票）
+        ticketTypeText = "",
         noAllotCount = 0;                                   // 还剩未分配的门票数量
         // cloneAddAnother = addAnother.clone();
         
-
+    var alreadyAllot = $("#alreadyAllot");
 
     $("#changeForm, #allotDialog").on("click keyup",":input",function() {
         var _this = $(this);
@@ -220,7 +223,8 @@ $(document).ready(function () {
 
     allotTicket.on("click", function () {
         var allotItem = $(this).parent();
-        var ticketType = allotItem.attr("data-tickettype");
+        
+        ticketType = allotItem.attr("data-tickettype");
             // ticketCount = allotItem.attr("data-ticketcount");
 
         noAllotCount = allotItem.attr("data-ticketcount");
@@ -232,15 +236,19 @@ $(document).ready(function () {
 
         switch (ticketType) {
             case "1":
+                ticketTypeText = "VIP票";
                 allotTitle.text("VIP票嘉宾分配");
                 break;
             case "2":
+                ticketTypeText = "直通票";
                 allotTitle.text("直通票嘉宾分配");
                 break;
             case "3":
+                ticketTypeText = "普通票";
                 allotTitle.text("普通票嘉宾分配");
                 break;
             case "4":
+                ticketTypeText = "展览票";
                 allotTitle.text("展览票嘉宾分配");
                 break;
         }
@@ -248,12 +256,15 @@ $(document).ready(function () {
     });
     closeAllotDialog.on("click", function () {
         allotDialog.find(".allot-form:gt(0)").remove();
+        noAllotContainer.find("input[type=text]").val("");
+        noAllotContainer.find("select").val(0);
+        noAllotContainer.find(".form-tips").removeAttr("style");
         allotDialog.removeAttr("style");
     });
     // 添加下一个
     allotDialog.on("click", "#addAnother", function () {
         noAllotCount--;
-        var tem = allotDialog.find(".allot-form").eq(0).clone();
+        var tem = allotDialog.find(".addallot-form").eq(0).clone();
         tem.find(":input[type=text]").val("");
         tem.find("select").val(0);
         tem.find(".form-tips").removeAttr("style");
@@ -262,4 +273,89 @@ $(document).ready(function () {
             addAnother.remove();
         }
     });
+    // 保存分配的门票参会人信息
+    saveAllot.on("click", function () {
+        var allotUsers = [],
+            allotForms = noAllotContainer.children(".addallot-form"),
+            mobileArr = [],
+            emailArr = [];
+
+        catchErr = false;
+
+        allotForms.each(function () {
+            var inputs = $(this).find(":input");
+            inputs.each(function () {
+                var currInput = $(this);
+                if (!validate(currInput)) {
+                    catchErr = true;
+                    currInput.focus();
+                    return false;
+                }
+            })
+            if (catchErr) {
+                return false;
+            }
+            allotUsers.push({
+                NameCn: $.trim(inputs.eq(0).val()),
+                NameEn: $.trim(inputs.eq(1).val()),
+                CompanyCn: $.trim(inputs.eq(2).val()),
+                CompanyEn: $.trim(inputs.eq(3).val()),
+                JobTitleCn: $.trim(inputs.eq(4).val()),
+                JobTitleEn: $.trim(inputs.eq(5).val()),
+                Mobile: $.trim(inputs.eq(6).val()),
+                Tel: $.trim(inputs.eq(7).val()),
+                Mail: $.trim(inputs.eq(8).val()),
+                Industry: $.trim(inputs.eq(9).val()),
+                JobFunction: $.trim(inputs.eq(10).val()),
+                Sex: $.trim(inputs.eq(11).val()), 
+            })
+        });
+        if (catchErr) {
+            return false;
+        }
+        
+        $(".mobile").each(function () {
+            var currVal = $(this).is("input") ? $.trim($(this).val()) : $(this).text()
+            mobileArr.push(currVal)
+        })
+        $(".email").each(function () {
+            var currVal = $(this).is("input") ? $.trim($(this).val()) : $(this).text()
+            emailArr.push(currVal)
+        })
+        valiRepeat(mobileArr, $(".mobile"), "手机号码");
+        if (catchErr) {
+            return false;
+        }
+        valiRepeat(emailArr, $(".email"), "邮箱地址");
+        if (catchErr) {
+            return false;
+        }
+
+        var order = {
+            TicketType: ticketType,
+            UserList: allotUsers
+        }
+        generateAlloted(allotUsers);
+        alreadyAllot.attr("rowspan", parseInt(alreadyAllot.attr("rowspan")) + allotUsers.length);
+        closeAllotDialog.trigger("click");
+    });
+
+    // 生成已分配信息
+    function generateAlloted (objArr) {
+        var str = "";
+        for (var i = 0; i < objArr.length; i++) {
+                str += "<tr class='hasborder alloted' data-nameen='" + objArr[i].NameEn + "'data-companyen='" + objArr[i].CompanyEn + "'data-joben='" + objArr[i].JobTitleEn + "'data-tel='" + objArr[i].Tel + "'data-industry='" + objArr[i].Industry + "'data-function='" + objArr[i].JobFunction + "'data-sex='" + objArr[i].Sex + "'>" + 
+                            "<td class='allotId'>" + (parseInt(alreadyAllot.attr("rowspan")) + i) + "</td>" + 
+                            "<td class='nameCN'>" + objArr[i].NameCn + "</td>" +
+                            "<td class='sex'>" + (objArr[i].Sex == 1 ? "男" : "女") + "</td>" + 
+                            "<td class='companyCN'>" + objArr[i].CompanyCn + "</td>" + 
+                            "<td class='jobCN'>" + objArr[i].JobTitleCn + "</td>" + 
+                            "<td class='mobile'>" + objArr[i].Mobile + "</td>" + 
+                            "<td class='email'>" + objArr[i].Mail + "</td>" + 
+                            "<td class='allotType'>" + "<span class='ticket-type'>" + ticketTypeText + "</span>" + "</td>" +
+                            "<td class='allotManage' style='overflow: visible;'>" + "<button class='changeBtn'>修改</button>" + "</td>" + 
+                       "</tr>"
+        }
+        allotTable.children("tbody").append(str);
+    }
 });

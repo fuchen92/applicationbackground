@@ -93,7 +93,7 @@
                                         <td class="white-divide" colspan="10"></td>
                                     </tr>
                                     <tr class="hasborder" style="border: 0;">
-                                        <td class="already-allot" rowspan="6" style="border: none;">已分配门票</td>
+                                        <td id="alreadyAllot" class="already-allot" rowspan="6" style="border: none;">已分配门票</td>
                                         <td colspan="9" style="border: 0; height: 0;"></td>
                                     </tr>
                                     <tr class="hasborder alloted" data-nameen="zhangsan" data-companyen="gonganju" data-joben="jingcha" data-tel="110" data-industry="76" data-function="3" data-sex="1">
@@ -163,7 +163,7 @@
                                         <td class="companyCN">工商局</td>
                                         <td class="jobCN">局长</td>
                                         <td class="mobile">15958144609</td>
-                                        <td class="email">115@qq.com</td>
+                                        <td class="email">118@qq.com</td>
                                         <td class="allotType">
                                             <span class="ticket-type">VIP票</span>
                                         </td>
@@ -178,11 +178,11 @@
                                     </tr>
 
                                     <!-- 未分配情况 -->
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="no-allot" colspan="10">
                                             您暂未分配门票
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                             <div class="allot-tips">
@@ -341,8 +341,8 @@
         <div class="allotDialog-content">
             <div id="closeAllotDialog" class="allotDialog-close">×</div>
             <h3 id="allotTitle" class="allot-title">VIP票嘉宾分配</h3>
-            <div class="allotLists">
-                <ul class="allot-form">
+            <div id="noAllot" class="allotLists">
+                <ul class="addallot-form">
                     <li class="form-group">
                         <div class="form-item lt">
                             <input class="allot-input" type="text" placeholder="中文姓名" data-role='[{ "name": "中文姓名" }]'>
@@ -378,7 +378,7 @@
                     </li>
                     <li class="form-group">
                         <div class="form-item lt">
-                            <input class="allot-input" type="text" placeholder="手机号码" data-role='[{ "name": "手机号码", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
+                            <input class="allot-input mobile" type="text" placeholder="手机号码" data-role='[{ "name": "手机号码", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
                             <p class="form-tips">请输入手机号码</p>
                             <p class="form-desc">请填写参会人手机号码以便接收通知</p>
                         </div>
@@ -390,7 +390,7 @@
                     </li>
                     <li class="form-group">
                         <div class="form-item lt">
-                            <input  class="allot-input" type="text" placeholder="Email地址" data-role='[{ "name": "Email地址", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
+                            <input  class="allot-input email" type="text" placeholder="Email地址" data-role='[{ "name": "Email地址", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
                             <p class="form-tips">请输入Email邮箱地址</p>
                             <p class="form-desc">请填写参会人Email地址以便接收通知</p>
                         </div>

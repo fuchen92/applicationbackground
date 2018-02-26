@@ -362,7 +362,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     height: 520px;
     overflow-y: scroll;
 }
-.allot-form:not(:nth-last-of-type(1)) {
+.addallot-form:not(:nth-last-of-type(1)) {
     border-bottom: 1px solid #dedede;
     margin-bottom: 55px;
     padding-bottom: 20px;
