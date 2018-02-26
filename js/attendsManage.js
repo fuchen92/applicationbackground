@@ -20,9 +20,12 @@ $(document).ready(function () {
         btnGroup = $("#btnGroup"),
         noAllotContainer = $("#noAllot"),
         ticketType = 0,                                     // 分配门票的类型（VIP票，普通票，直通票，展览票）
-        ticketTypeText = "",
-        noAllotCount = 0;                                   // 还剩未分配的门票数量
+        ticketTypeText = "";
         // cloneAddAnother = addAnother.clone();
+        
+    var allotItem = null,
+        canAddCount = 0,                                    // 能不能继续添加下一个的标识
+        noAllotCount = 0;                                   // 还剩未分配的门票数量
         
     var alreadyAllot = $("#alreadyAllot");
 
@@ -173,7 +176,6 @@ $(document).ready(function () {
         changeTR.children(".mobile").text(changedInfo[6]);
         changeTR.children(".email").text(changedInfo[8]);
         
-        console.log(changeTR[0]);
         console.log("修改成功啦")
         closeDialog.trigger("click");
 
@@ -222,12 +224,13 @@ $(document).ready(function () {
     }
 
     allotTicket.on("click", function () {
-        var allotItem = $(this).parent();
+        allotItem = $(this).parent();
         
         ticketType = allotItem.attr("data-tickettype");
             // ticketCount = allotItem.attr("data-ticketcount");
 
         noAllotCount = allotItem.attr("data-ticketcount");
+        canAddCount = noAllotCount;
         if (noAllotCount - 1 <= 0) {
             addAnother.remove();
         } else if (!$.contains(btnGroup[0], addAnother[0])) {
@@ -255,7 +258,7 @@ $(document).ready(function () {
         allotDialog.css("display", "block");
     });
     closeAllotDialog.on("click", function () {
-        allotDialog.find(".allot-form:gt(0)").remove();
+        allotDialog.find(".addallot-form:gt(0)").remove();
         noAllotContainer.find("input[type=text]").val("");
         noAllotContainer.find("select").val(0);
         noAllotContainer.find(".form-tips").removeAttr("style");
@@ -263,13 +266,13 @@ $(document).ready(function () {
     });
     // 添加下一个
     allotDialog.on("click", "#addAnother", function () {
-        noAllotCount--;
+        canAddCount--;
         var tem = allotDialog.find(".addallot-form").eq(0).clone();
         tem.find(":input[type=text]").val("");
         tem.find("select").val(0);
         tem.find(".form-tips").removeAttr("style");
         btnGroup.before(tem);
-        if (noAllotCount - 1 <= 0) {
+        if (canAddCount - 1 <= 0) {
             addAnother.remove();
         }
     });
@@ -337,6 +340,11 @@ $(document).ready(function () {
         }
         generateAlloted(allotUsers);
         alreadyAllot.attr("rowspan", parseInt(alreadyAllot.attr("rowspan")) + allotUsers.length);
+        noAllotCount -= allotUsers.length;
+        console.log(noAllotCount);
+        allotItem.attr("data-ticketcount", noAllotCount).children(".ticket-count").text(noAllotCount);
+        noAllotCount <= 0 && allotItem.remove();
+        $(".allot-tips").children(".allottips-item").length == 0 && $(".allot-tips").remove();
         closeAllotDialog.trigger("click");
     });
 
