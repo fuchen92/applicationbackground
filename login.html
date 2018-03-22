@@ -8,6 +8,16 @@
     <meta name="renderer" content="webkit">
     <title>登录页</title>
     <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript">
+    	function resize () {
+    		if (document.documentElement.clientWidth > 750) {
+    			return;
+    		}
+    		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+    	}
+    	resize();
+    	window.onresize = resize;
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -16,6 +26,8 @@
             <b class="divide"></b>
             <h3 class="logo-title">报名信息管理</h3>
         </div>
+        <p class="mobile-tips">为保证优质体验，请在电脑端打开此链接</p>
+        <p class="mobile-link">http://www.baidu.com</p>
         <div class="login-box">
             <div class="form-group clear">
                 <input id="mobile" class="form-input" type="text" placeholder="请输入报名时填写的联系人手机号" />
@@ -44,7 +56,7 @@
         </div>
     </div>
     <p class="copyright">
-        copyright &copy;2006 - 2018环球旅讯
+        copyright &copy;2006 - 2018中华人民共和国
     </p>
 
     <script src="http://img.traveldaily.cn/script/jquery.js"></script>

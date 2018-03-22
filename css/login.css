@@ -233,3 +233,32 @@ button:disabled:hover {
     color: #858585;
     font-size: 14px;
 }
+
+
+@media screen and (max-width: 750px) {
+	html, body {
+		min-width: 100%;
+	}
+	.wrapper {
+		width: 90%;
+		margin: 0 auto;
+		transform: translate(-50%, -75%);
+	}
+	.logo > img {
+		width: 2rem;
+	}
+	.mobile-tips {
+		display: block;
+		text-align: center;
+		font-size: 0.36rem;
+	}
+	.mobile-link {
+		display: block;
+		text-align: center;
+		font-size: 0.32rem;
+		margin-top: 0.2rem;
+	}
+	.login-box {
+		display: none;
+	}
+}
